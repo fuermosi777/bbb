@@ -1,5 +1,6 @@
 #!/bin/zsh
 now=`date`
+node hash.js
 git add .
 git commit -m "$now"
 git push origin master
