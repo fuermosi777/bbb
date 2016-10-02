@@ -10,12 +10,21 @@ function code() {
     return text;
 }
 
-var configFile = fs.readFileSync('_config.yml', 'utf-8');
-var lines = configFile.split('\n');
-for (var l of lines) {
-    if (l.startsWith('permalink:')) {
-        l = `permalink: /${code()}/:month-:day-:year/:title`
+function updateHash() {
+    var configFile = fs.readFileSync('_config.yml', 'utf-8');
+    var lines = configFile.split('\n');
+    for (var i = 0; i < lines.length; i++) {
+        var l = lines[i];
+        if (l.startsWith('permalink:')) {
+            lines[i] = `permalink: /${code()}/:month-:day-:year/:title`;
+        }
     }
+    var content = lines.join('\n');
+    fs.writeFileSync('_config.yml', content);
 }
-var content = lines.join('\n');
-fs.writeFileSync('_config.yml', content);
+
+function main() {
+    updateHash();
+}
+
+main();
