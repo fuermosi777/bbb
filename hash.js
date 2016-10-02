@@ -11,4 +11,11 @@ function code() {
 }
 
 var configFile = fs.readFileSync('_config.yml', 'utf-8');
-console.log(configFile);
+var lines = configFile.split('\n');
+for (var l of lines) {
+    if (l.startsWith('permalink:')) {
+        l = `permalink: /${code()}/:month-:day-:year/:title`
+    }
+}
+var content = lines.join('\n');
+fs.writeFileSync('_config.yml', content);
