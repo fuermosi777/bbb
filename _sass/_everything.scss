@@ -27,6 +27,12 @@ body {
     width: 100%;
     background-color: #E8ECEF;
     font-size: 1.5rem;
+    &.block {
+        background: white;
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+    }
 }
 
 header {
