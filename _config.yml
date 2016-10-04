@@ -1,29 +1,22 @@
---- 
-layout: default
-permalink: /goi92JcgEQ/:month-:day-:year/:title
----
-<section class="post-list">
-    {% for post in paginator.posts %}
-    {% if post.category != 'secret' %}
-    <article>
-        <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-        <div class="excerpt">
-            {{ post.content | strip_html | truncate: 250 }}
-        </div>
-        <p class="date"><i class="fa fa-sun-o"></i> {{ post.date | date: "%Y-%m-%d" }}</p>
-    </article>
-    {% endif %}
-    {% endfor %}
-    <!-- Pagination links -->
-    <nav>
-        {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path }}" class="previous">&gt;</a>{% endif %} 
-        {% if paginator.previous_page %}
-            {% if paginator.next_page %}
-            <span></span>
-            {% endif %}
-        {% endif %}
-        {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path }}" class="next"><i class="fa fa-angle-right"></i></a> {% endif %}
-    </nav>
-</section>
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: hcsh
+email: liuhao1990@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+   An artisan in the digital age
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://blog.liuhao.im" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+permalink: /RokZjyf8Mi/:month-:day-:year/:title
+paginate: 3
+paginate_path: "/:num/"
+gems:
+  - jekyll-paginate

@@ -20,7 +20,7 @@ function updateHash(filename) {
         }
     }
     var content = lines.join('\n');
-    fs.writeFileSync('_config.yml', content);
+    fs.writeFileSync(filename, content);
 }
 
 function main() {
