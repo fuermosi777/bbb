@@ -10,8 +10,8 @@ function code() {
     return text;
 }
 
-function updateHash() {
-    var configFile = fs.readFileSync('_config.yml', 'utf-8');
+function updateHash(filename) {
+    var configFile = fs.readFileSync(filename, 'utf-8');
     var lines = configFile.split('\n');
     for (var i = 0; i < lines.length; i++) {
         var l = lines[i];
@@ -24,7 +24,8 @@ function updateHash() {
 }
 
 function main() {
-    updateHash();
+    updateHash('_config.yml');
+    updateHash('home.html');
 }
 
 main();
