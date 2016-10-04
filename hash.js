@@ -15,7 +15,7 @@ function updateHash(filename, startsWith, newValue) {
     var lines = configFile.split('\n');
     for (var i = 0; i < lines.length; i++) {
         var l = lines[i];
-        if (l.startsWith()) {
+        if (l.startsWith(startsWith)) {
             lines[i] = newValue;
         }
     }
