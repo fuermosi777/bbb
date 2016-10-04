@@ -199,3 +199,21 @@ footer {
 .tracker {
     visibility: hidden;
 }
+
+.enter {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a {
+        font-family: 'Kaushan Script';
+        color: #333333;
+        text-decoration: none;
+        font-size: 2rem;
+    }
+}
