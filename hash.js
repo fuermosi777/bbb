@@ -10,13 +10,13 @@ function code() {
     return text;
 }
 
-function updateHash(filename) {
+function updateHash(filename, newValue) {
     var configFile = fs.readFileSync(filename, 'utf-8');
     var lines = configFile.split('\n');
     for (var i = 0; i < lines.length; i++) {
         var l = lines[i];
         if (l.startsWith('permalink:')) {
-            lines[i] = `permalink: /${code()}/:month-:day-:year/:title`;
+            lines[i] = newValue;
         }
     }
     var content = lines.join('\n');
@@ -24,8 +24,9 @@ function updateHash(filename) {
 }
 
 function main() {
-    updateHash('_config.yml');
-    updateHash('home.html');
+    var code = code();
+    updateHash('_config.yml', `permalink: /${code()}/:month-:day-:year/:title`);
+    updateHash('home.html', `permalink: /${code()}`);
 }
 
 main();
