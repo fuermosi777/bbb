@@ -25,8 +25,8 @@ function updateHash(filename, newValue) {
 
 function main() {
     var code = code();
-    updateHash('_config.yml', `permalink: /${code()}/:month-:day-:year/:title`);
-    updateHash('home.html', `permalink: /${code()}`);
+    updateHash('_config.yml', `permalink: /${code}/:month-:day-:year/:title`);
+    updateHash('home.html', `permalink: /${code}`);
 }
 
 main();
