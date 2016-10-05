@@ -6,8 +6,20 @@
 
     // before load
     checkIP(blockIP);
+    identifyUser();
 
     document.addEventListener('DOMContentLoaded', setHeroImage);
+
+    function genID() {
+        var text = "";
+        var possible = "1234567890";
+
+        for (var i = 0; i < 10; i++)
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+        return text;
+
+    }
 
     function setHeroImage() {
         var date = new Date();
@@ -23,9 +35,7 @@
     function blockIP(response) {
         var e = document.body;
         if (BIP.indexOf(response.ip) >= 0) {
-            mixpanelLoaded(function() {
-                mixpanel.track('block', { request: response });
-            });
+            mixpanel.track('block', { request: response });
             setTimeout(function() {
                 window.location = '404';
             }, 1000);
@@ -34,13 +44,17 @@
         }
     }
 
-    var mixpanelFinder;
-    function mixpanelLoaded(done) {
-        mixpanelFinder = setInterval(function() {
-            if (mixpanel !== undefined) {
-                clearInterval(mixpanelFinder);
-                done();
-            }
-        }, 300);
+
+    function identifyUser() {
+        var s = localStorage;
+        var id = s.getItem('uid');
+        if (id !== null) {
+            mixpanel.alias(id);
+        } else {
+            id = genID();
+            s.setItem('uid', id);
+            mixpanel.identify(id);
+        }
     }
+
 })();
