@@ -15,9 +15,9 @@ url: "http://blog.liuhao.im" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
-code: hvjmwqkdrn
-permalink: /hvjmwqkdrn/:month-:day-:year/:title
+code: qzdmvrtzik
+permalink: /qzdmvrtzik/:month-:day-:year/:title
 paginate: 3
-paginate_path: /hvjmwqkdrn/:num/
+paginate_path: /qzdmvrtzik/:num/
 gems:
   - jekyll-paginate
