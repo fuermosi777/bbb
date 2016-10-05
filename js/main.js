@@ -12,7 +12,8 @@
     function setHeroImage() {
         var date = new Date();
         var hash = date.getFullYear().toString() + date.getMonth().toString() + date.getDate().toString() + date.getHours().toString();
-        document.querySelector('.hero img').src = '/images/hero/img' + (parseInt(hash % 36) + 1) + '.jpg';
+        var img = document.querySelector('.hero img');
+        if (img) document.querySelector('.hero img').src = '/images/hero/img' + (parseInt(hash % 36) + 1) + '.jpg';
     }
 
     function checkIP(done) {
