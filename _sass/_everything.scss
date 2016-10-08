@@ -23,10 +23,10 @@ body {
     margin: 0;
     color: rgba(0, 0, 0, 0.7);
     font-family: 'PingFang SC', 'Hiragino Sans GB', 'PingHei', 'Open Sans', sans-serif, Helvetica Neue, 'Work Sans', 'Microsoft YaHei', SimSun;
-    font-size: 14px;
+    font-size: 13px;
     width: 100%;
-    background-color: #E8ECEF;
-    font-size: 1.4rem;
+    background: white;
+    font-size: 1.3rem;
     letter-spacing: 1px;
     &.block {
         background: white;
@@ -57,7 +57,7 @@ header {
         height: 150px;
         margin-top: 60px;
         font-size: 2.6rem;
-        padding: 0 50px;
+        padding: 0 40px;
     }
 }
 
@@ -104,7 +104,7 @@ section.post-list {
         padding: 0 40px;
     }
     article {
-        border-bottom: 1px solid #F3F3F3;
+        
     }
 }
 
@@ -113,7 +113,7 @@ article {
         margin: 0;
         padding-top: 60px;
         margin-bottom: 30px;
-        font-size: 2.2rem;
+        font-weight: normal;
         a {
             color: #1F1F1F;
             text-decoration: none;
@@ -125,7 +125,6 @@ article {
     .date {
         margin: 0 0 60px 0;
         color: #bbbbbb;
-        font-size: 1.2rem;
     }
     .excerpt {
         margin: 0 0 20px 0;
@@ -175,17 +174,13 @@ nav {
         display: block;
         width: 40px;
         height: 40px;
-        border-radius: 20px;
-        border: 1px solid #DDDDDD;
         color: #AAAAAA;
         display: flex;
         text-decoration: none;
         justify-content: center;
         align-items: center;
         &:hover {
-            background-color: #1F1F1F;
-            border-color: #1F1F1F;
-            color: white;
+            color: #000;
         }
     }
     span {

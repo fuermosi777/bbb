@@ -7,23 +7,23 @@ layout: default
     <article>
         <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
         <div class="excerpt">
-            {{ post.content | strip_html | truncate: 250 }}
+            {{ post.content | strip_html | truncate: 150 }}
         </div>
-        <p class="date"><i class="fa fa-sun-o"></i> {{ post.date | date: "%Y-%m-%d" }}</p>
+        <p class="date">{{ post.date | date: "%Y-%m-%d" }}</p>
     </article>
     {% endif %}
     {% endfor %}
     <!-- Pagination links -->
     <nav>
         {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path }}" class="previous">&gt;</a>{% endif %} 
+        <a href="{{ paginator.previous_page_path }}" class="previous">&lt;</a>{% endif %} 
         {% if paginator.previous_page %}
             {% if paginator.next_page %}
             <span></span>
             {% endif %}
         {% endif %}
         {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path }}" class="next"><i class="fa fa-angle-right"></i></a> {% endif %}
+        <a href="{{ paginator.next_page_path }}" class="next">&gt;</a> {% endif %}
     </nav>
 </section>
 <script>

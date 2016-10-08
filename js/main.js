@@ -8,7 +8,7 @@
     checkIP(blockIP);
     identifyUser();
 
-    document.addEventListener('DOMContentLoaded', setHeroImage);
+    // document.addEventListener('DOMContentLoaded', setHeroImage);
 
     function genID() {
         var text = "";
