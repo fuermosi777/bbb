@@ -2,7 +2,7 @@
 
 (function() {
 
-    var BIP = ['73.241.178.10'];
+    var BIP = ['67.188.95.231'];
 
     // before load
     checkIP(blockIP);
