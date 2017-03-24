@@ -12,7 +12,7 @@ layout: default
             {{ post.content | strip_html | truncate: 150 }}
             {% endif %}
         </div>
-        <p class="date">{{ post.date | date: "%Y-%m-%d" }}</p>
+        <!-- <p class="date">{{ post.date | date: "%Y-%m-%d" }}</p> -->
     </article>
     {% endfor %}
     <!-- Pagination links -->
