@@ -14,7 +14,7 @@
 
     input.focus();
 
-    input.addEventListener('keydown', function(e) {
+    input.addEventListener('keypress', function(e) {
         var value = input.value;
 
         if (value === CORRECT) {
