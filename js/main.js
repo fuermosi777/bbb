@@ -15,16 +15,15 @@
     input.focus();
 
     input.addEventListener('keydown', function(e) {
+        var value = input.value;
+
+        if (value === CORRECT) {
+            password.parentNode.removeChild(password);
+        }
+
         if (e.keyCode === 13) {
-            var value = input.value;
-
             mixpanel.track('password attempt', {password: value});
-
-            if (value === CORRECT) {
-                password.parentNode.removeChild(password);
-            } else {
-                input.value = '';
-            }
+            input.value = '';
         }
     });
 
