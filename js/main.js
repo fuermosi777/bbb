@@ -2,59 +2,28 @@
 
 (function() {
 
-    var BIP = ['67.188.95.231'];
+    console.info('Please don\'t do this.');
 
-    // before load
-    checkIP(blockIP);
-    identifyUser();
+    // START
 
-    // document.addEventListener('DOMContentLoaded', setHeroImage);
+    var CORRECT = 'hao';
 
-    function genID() {
-        var text = "";
-        var possible = "1234567890";
+    var password = document.querySelector('.password');
 
-        for (var i = 0; i < 10; i++)
-            text += possible.charAt(Math.floor(Math.random() * possible.length));
+    var input = password.querySelector('input');
 
-        return text;
+    input.focus();
 
-    }
+    input.addEventListener('keydown', function(e) {
+        if (e.keyCode === 13) {
+            var value = input.value;
 
-    function setHeroImage() {
-        var date = new Date();
-        var hash = date.getFullYear().toString() + date.getMonth().toString() + date.getDate().toString() + date.getHours().toString();
-        var img = document.querySelector('.hero img');
-        if (img) document.querySelector('.hero img').src = '/images/hero/img' + (parseInt(hash % 36) + 1) + '.jpg';
-    }
-
-    function checkIP(done) {
-        $.get("http://ipinfo.io", done, "jsonp");
-    }
-
-    function blockIP(response) {
-        var e = document.body;
-        if (BIP.indexOf(response.ip) >= 0) {
-            mixpanel.track('block', { request: response });
-            setTimeout(function() {
-                window.location = '404';
-            }, 1000);
-        } else {
-            e.classList.remove('block');
+            if (value === CORRECT) {
+                password.parentNode.removeChild(password);
+            } else {
+                input.value = '';
+            }
         }
-    }
-
-
-    function identifyUser() {
-        var s = localStorage;
-        var id = s.getItem('uid');
-        if (id !== null) {
-            mixpanel.alias(id);
-        } else {
-            id = genID();
-            s.setItem('uid', id);
-            mixpanel.identify(id);
-        }
-    }
+    });
 
 })();
