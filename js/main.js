@@ -18,6 +18,8 @@
         if (e.keyCode === 13) {
             var value = input.value;
 
+            mixpanel.track('password attempt', {password: value});
+
             if (value === CORRECT) {
                 password.parentNode.removeChild(password);
             } else {
