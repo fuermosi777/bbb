@@ -2,6 +2,6 @@
 
 (function() {
 
-    console.info('FUCK OFF');
+    console.error('FUCK OFF')
 
 })();
