@@ -2,6 +2,4 @@
 
 (function() {
 
-    console.error('FUCK OFF')
-
 })();
