@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<section class="post-list">
+    {% for post in paginator.posts %}
+    <article>
+        <h1><a href="{% if post.category == 'secret' %}#{% else %}{{ post.url }}{% endif %}">{{ post.title }}</a></h1>
+        <div class="excerpt">
+            {{ post.content | strip_html | truncate: 200 }}
+        </div>
+         <p class="date">{{ post.date | date: "%Y-%m-%d" }}</p> 
+    </article>
+    {% endfor %}
+    <!-- Pagination links -->
+    <nav>
+        {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path }}" class="previous">&lt;</a>{% endif %} 
+        {% if paginator.previous_page %}
+            {% if paginator.next_page %}
+            <span></span>
+            {% endif %}
+        {% endif %}
+        {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path }}" class="next">&gt;</a> {% endif %}
+    </nav>
+</section>
