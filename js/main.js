@@ -50,6 +50,7 @@
         $('article').addClass('hidden');
 
         if (isHidden) {
+            mixpanel.track('view post', { pid: pid });
             el.removeClass('hidden');
         } else {
             el.addClass('hidden');
