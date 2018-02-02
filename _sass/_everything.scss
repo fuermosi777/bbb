@@ -14,8 +14,6 @@
        -moz-user-select: none; /* Firefox */
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
-    transition: all 0.3s;
-
 }
 
 html {
@@ -33,134 +31,92 @@ body {
     font-family: 'PingFang SC', 'Hiragino Sans GB', 'PingHei', 'Open Sans', sans-serif, Helvetica Neue, 'Work Sans', 'Microsoft YaHei', SimSun;
     font-size: 13px;
     width: 100%;
-    background: white;
     font-size: 1.3rem;
     letter-spacing: 1px;
+    background-color: $background-color;
 }
 
-header {
+.logo {
     font-family: 'Kaushan Script';
     margin: 0 auto;
-    background-color: white;
     display: flex;
-    align-items: center;;
+    align-items: center;
+    font-size: 2rem;
+    padding: 15px;
     a {
         color: #333333;
         text-decoration: none;
     }
-    @media #{$s} {
-        width: 100%;
-        height: 100px;
-        font-size: 2rem;
-        padding: 0 20px;
-    }
-    @media #{$l} {
-        width: 780px;
-        height: 150px;
-        margin-top: 60px;
-        font-size: 2.6rem;
-        padding: 0 40px;
-    }
 }
 
-section {
-    background-color: #FFFFFF;
-    margin: 0 auto;
-    @media #{$s} {
-        width: 100%;
-    }
-    @media #{$l} {
-        width: 780px;
-    }
-    overflow: hidden;
-}
+.journal {
+    width: 100%;
+    height: 100%;
+    display: flex;
 
-section.post {
-    @media #{$s} {
-        padding: 0 20px;
+    .side-bar {
+        height: 100%;
+        flex: 1;
+        display: flex;
     }
-    @media #{$l} {
-        padding: 0 40px;
-    }
-}
 
-section.post-list {
-    @media #{$s} {
-        padding: 0 20px;
+    .main-part {
+        flex: 2;
+        height: 100%;
     }
-    @media #{$l} {
-        padding: 0 40px;
+
+    .year-list {
+        flex: 2;
+        height: 100%;
+        overflow-y: scroll;
+        border-right: 1px solid rgba(0, 0, 0, 0.1);
     }
+
     .year-title {
-        color: #BBBBBB;
-        cursor: pointer;
-        margin-bottom: 10px;
-        &:hover {
-            color: #333333;
+        padding: 15px;
+        transition: all 0.3s;
+        &:hover,
+        &.active {
+            padding-left: 20px;
         }
-    }
-    .post-title {
-        color: #BBBBBB;
-        cursor: pointer;
-        margin-bottom: 10px;
-        &:hover {
-            color: #333333;
-        }
-    }
-    article {
-        border: 1px solid #efefef;
-        padding: 18px 22px 0 22px;
-        border-radius: 2px;
-        margin-bottom: 20px;
-    }
-}
-
-article {
-    img {
-        max-width: 100%;
-    }
-    .post-content {
-        p {
-            color: #666;
-            line-height: 2.4;
-            margin: 0 0 20px;
-        }
-        hr {
-            border: none;
-            height: 1px;
-            background: #eee;
-            margin: 50px 30%;
-        }
-        ol,
-        ul {
-            margin: 10px 0;
-            padding: 10px 20px;
-        }
-        ol li {
-            list-style-type: decimal;
-        }
-        ul li {
-            list-style-type: square;
-        }
-        strong {
-            font-weight: bold;
-            color: #000;
-            background: #eee;
-            border-radius: 3px;
-            padding: 0 2px;
-        }
-        blockquote {
+        &.active {
             background-color: rgba(0, 0, 0, 0.05);
-            margin: 0;
-            padding: 20px 20px 5px;
-            border-radius: 2px;
-            margin-bottom: 10px;
         }
     }
-}
 
-footer {
-    height: 100px;
+    .title-list {
+        flex: 3;
+        height: 100%;
+        overflow-y: scroll;
+        border-right: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .post-title {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.3s;
+        &:hover,
+        &.active {
+            padding-left: 20px;
+        }
+        &.active {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+        .date-text {
+            color: rgba(0,0,0,0.3);
+        }
+        .title-text {
+
+        }
+    }
+
+    article {
+        height: 100%;
+        overflow-y: scroll;
+        padding: 15px;
+        font-size: 14px;
+    }
 }
 
 .tracker {

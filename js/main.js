@@ -32,12 +32,15 @@
     $('.year-title').on('click', function(e) {
         var year = $(this).data('year');
         var el = $('.post-title[data-year=' + year + ']');
+        var yearEl = $('.year-title[data-year=' + year + ']');
         var isHidden = el.hasClass('hidden');
         $('article').addClass('hidden');
         $('.post-title').addClass('hidden');
+        $('.year-title').removeClass('active');
 
         if (isHidden) {
             el.removeClass('hidden');
+            yearEl.addClass('active');
         } else {
             el.addClass('hidden');
         }
@@ -46,12 +49,17 @@
     $('.post-title').on('click', function(e) {
         var pid = $(this).data('pid');
         var el = $('article[data-pid="' + pid + '"]');
+        var titleEl = $('.post-title[data-pid="' + pid + '"]');
         var isHidden = el.hasClass('hidden');
         $('article').addClass('hidden');
+        $('.post-title').removeClass('active');
+
+        console.log(titleEl)
 
         if (isHidden) {
             mixpanel.track('view post', { pid: pid });
             el.removeClass('hidden');
+            titleEl.addClass('active');
         } else {
             el.addClass('hidden');
         }

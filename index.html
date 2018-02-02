@@ -2,20 +2,36 @@
 layout: default
 ---
 
-<section class="post-list">
-    {% for post in site.posts %}
-        {% assign currentdate = post.date | date: "%Y" %}
-        {% if currentdate != date %}
-            <div class="year-title" data-year="{{ post.date | date: "%Y" }}">{{ currentdate }}</div>
-            {% assign date = currentdate %}
-        {% endif %}
-        <div data-year="{{ post.date | date: "%Y" }}" data-pid="{{ post.id }}" class="post-title hidden">{{ post.title }} {{ post.date | date: "%m/%d" }} {% if post.category == 'secret' %}<i class="fa fa-lock" aria-hidden="true"></i>{% endif %}</div>
-        {% if post.category != 'secret' %}
-            <article data-pid="{{ post.id }}" class="hidden">
-                <div class="post-content">
-                    {{ post.content }}
-                </div>
-            </article>
-        {% endif %}
-    {% endfor %}
-</section>
+<div class="journal">
+    <div class="side-bar">
+        <div class="year-list">
+            <div class="logo"><a href="/">hcsh</a></div>
+        {% for post in site.posts %}
+            {% assign currentdate = post.date | date: "%Y" %}
+            {% if currentdate != date %}
+                <div class="year-title" data-year="{{ post.date | date: "%Y" }}">{{ currentdate }}</div>
+                {% assign date = currentdate %}
+            {% endif %}
+        {% endfor %}
+        </div>
+        <div class="title-list">
+        {% for post in site.posts %}
+            <div data-year="{{ post.date | date: "%Y" }}" data-pid="{{ post.id }}" class="post-title hidden">
+                <span class="date-text">{{ post.date | date: "%m/%d" }}</span>
+                <span class="title-text">{{ post.title }} {% if post.category == 'secret' %}<i class="fa fa-lock" aria-hidden="true"></i>{% endif %}</span>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+    <div class="main-part">
+        {% for post in site.posts %}
+            {% if post.category != 'secret' %}
+                <article data-pid="{{ post.id }}" class="hidden">
+                    <div class="post-content">
+                        {{ post.content }}
+                    </div>
+                </article>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
