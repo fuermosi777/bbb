@@ -54,8 +54,6 @@
         $('article').addClass('hidden');
         $('.post-title').removeClass('active');
 
-        console.log(titleEl)
-
         if (isHidden) {
             mixpanel.track('view post', { pid: pid });
             el.removeClass('hidden');
