@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<!-- <div class="journal">
+<div class="journal">
     <div class="side-bar">
         <div class="year-list">
             <div class="logo"><a href="/">hcsh</a></div>
@@ -16,10 +16,12 @@ layout: default
         </div>
         <div class="title-list">
         {% for post in site.posts %}
-            <div data-year="{{ post.date | date: "%Y" }}" data-pid="{{ post.id }}" class="post-title hidden">
-                <span class="date-text">{{ post.date | date: "%m/%d" }}</span>
-                <span class="title-text">{{ post.title }} {% if post.category == 'secret' %}<i class="fa fa-lock" aria-hidden="true"></i>{% endif %}</span>
-            </div>
+            {% if post.category != 'secret' %}
+                <div data-year="{{ post.date | date: "%Y" }}" data-pid="{{ post.id }}" class="post-title hidden">
+                    <span class="date-text">{{ post.date | date: "%m/%d" }}</span>
+                    <span class="title-text">{{ post.title }}</span>
+                </div>
+            {% endif %}
         {% endfor %}
         </div>
     </div>
@@ -34,4 +36,4 @@ layout: default
             {% endif %}
         {% endfor %}
     </div>
-</div> -->
+</div>
