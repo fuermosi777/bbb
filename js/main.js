@@ -31,6 +31,8 @@
 
     $('.year-title').on('click', function(e) {
         var year = $(this).data('year');
+        amplitude.getInstance().logEvent('Click Year', { year: year });
+        
         var el = $('.post-title[data-year=' + year + ']');
         var yearEl = $('.year-title[data-year=' + year + ']');
         var isHidden = el.hasClass('hidden');
