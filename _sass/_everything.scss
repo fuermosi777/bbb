@@ -70,12 +70,14 @@ body {
     }
 
     .side-bar {
+        transition: all 0.3s;
         height: 100%;
         flex: 1;
         display: flex;
     }
 
     .main-part {
+        transition: all 0.3s;
         flex: 2;
         height: 100%;
     }

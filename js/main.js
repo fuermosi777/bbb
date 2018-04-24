@@ -57,6 +57,8 @@
         var isHidden = el.hasClass('hidden');
         $('article').addClass('hidden');
         $('.post-title').removeClass('active');
+        $('.year-list').addClass('mobile-hidden');
+        $('.main-part').removeClass('mobile-hidden');
 
         if (isHidden) {
             el.removeClass('hidden');
@@ -67,11 +69,11 @@
     });
 
     $('.close-post').on('click', function(e) {
-        var pid = $(this).data('pid');
-        var el = $('article[data-pid="' + pid + '"]');
-        var titleEl = $('.post-title[data-pid="' + pid + '"]');
-
         $('article').addClass('hidden');
         $('.post-title').removeClass('active');
+        $('.year-list').removeClass('mobile-hidden');
+        $('.main-part').addClass('mobile-hidden');
+
+        amplitude.getInstance().logEvent('Close Post');
     });
 })();
