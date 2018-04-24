@@ -62,4 +62,13 @@
             el.addClass('hidden');
         }
     });
+
+    $('.close-post').on('click', function(e) {
+        var pid = $(this).data('pid');
+        var el = $('article[data-pid="' + pid + '"]');
+        var titleEl = $('.post-title[data-pid="' + pid + '"]');
+
+        $('article').addClass('hidden');
+        $('.post-title').removeClass('active');
+    });
 })();
