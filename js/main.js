@@ -31,6 +31,8 @@
 
     $('.year-title').on('click', function(e) {
         var year = $(this).data('year');
+        amplitude.getInstance().logEvent('Click Year', { year: year });
+        
         var el = $('.post-title[data-year=' + year + ']');
         var yearEl = $('.year-title[data-year=' + year + ']');
         var isHidden = el.hasClass('hidden');
@@ -48,6 +50,8 @@
 
     $('.post-title').on('click', function(e) {
         var pid = $(this).data('pid');
+        amplitude.getInstance().logEvent('Click Post', { pid: pid });
+        
         var el = $('article[data-pid="' + pid + '"]');
         var titleEl = $('.post-title[data-pid="' + pid + '"]');
         var isHidden = el.hasClass('hidden');
@@ -55,7 +59,6 @@
         $('.post-title').removeClass('active');
 
         if (isHidden) {
-            mixpanel.track('view post', { pid: pid });
             el.removeClass('hidden');
             titleEl.addClass('active');
         } else {
