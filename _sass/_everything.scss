@@ -36,12 +36,6 @@ body {
     background-color: $background-color;
 }
 
-.mobile-hidden {
-    @media (max-width: 500px) {
-        display: none;
-    }
-}
-
 .logo {
     font-family: 'Kaushan Script';
     margin: 0 auto;

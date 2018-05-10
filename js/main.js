@@ -26,6 +26,7 @@
         pid: null,
         year: null,
         date: null,
+        showEmailModal: true
     };
 
     var yearListEl = document.querySelector('.year-list');
@@ -60,12 +61,10 @@
 
     document.addEventListener('keydown', function(e) {
         if (e.keyCode === KEYCODE.ESC) {
-            amplitude.getInstance().logEvent('Press Esc');
             state.pid = null;
             state.year = null;
             render();
         } else if (e.keyCode === KEYCODE.UP_ARROW) {
-            amplitude.getInstance().logEvent('Press Up Arrow');
             if (state.pid) {
                 var index = getPostIndex(state.pid);
                 if (index === 0) return;
@@ -82,7 +81,6 @@
                 render();
             }
         } else if (e.keyCode === KEYCODE.DOWN_ARROW) {
-            amplitude.getInstance().logEvent('Press Down Arrow');
             if (state.pid) {
                 var index = getPostIndex(state.pid);
                 if (index === posts.length - 1) return;
@@ -99,13 +97,11 @@
                 render();
             }
         } else if (e.keyCode === KEYCODE.LEFT_ARROW) {
-            amplitude.getInstance().logEvent('Press Left Arrow');
             if (state.pid) {
                 state.pid = null;
                 render();
             }
         } else if (e.keyCode === KEYCODE.RIGHT_ARROW) {
-            amplitude.getInstance().logEvent('Press Right Arrow');
             if (!state.year) {
                 state.year = years[0];
                 render();
@@ -210,6 +206,9 @@
             `;
             mainPartEl.appendChild(postEl);
         }
+
+        // Email modal
+        
 
     }
 
