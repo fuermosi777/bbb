@@ -26,36 +26,30 @@
         pid: null,
         year: null,
         date: null,
-        showEmailModal: true
+        showEmailModal: true,
+        titleListScrollTop: 0,
+        isEmailEntered: false
     };
 
-    var yearListEl = document.querySelector('.year-list');
-    var yearListItemsEl = document.querySelector('.year-list-items');
-    var titleListEl = document.querySelector('.title-list');
-    var mainPartEl = document.querySelector('.main-part');
-
-    yearListItemsEl.addEventListener('mousedown', function(e) {
-        if (e.target.classList.contains('year-title')) {
-            var year = e.target.getAttribute('data-year');
-            handleYearClick(year);
-        }
-    });
-
-    titleListEl.addEventListener('mousedown', function(e) {
-        var target = e.target;
-        while (target && !target.classList.contains('post-title')) {
-            target = target.parentNode;
-        }
-
-        var id = target.getAttribute('data-id');
-        handleTitleClick(id);
-    });
+    var rootEl = document.querySelector('.journal');
 
     document.addEventListener('mousedown', function(e) {
         if (e.target.className === 'close-post') {
-            amplitude.getInstance().logEvent('Click Close Post');
+            e.stopPropagation();
             state.pid = null;
             render();
+        }
+        if (e.target.classList.contains('year-title')) {
+            e.stopPropagation();
+            var year = e.target.getAttribute('data-year');
+            handleYearClick(year);
+        }
+        if (e.target.classList.contains('post-title') ||
+            e.target.classList.contains('date-text') ||
+            e.target.classList.contains('title-text')) {
+            e.stopPropagation();
+            var id = e.target.getAttribute('data-id');
+            handleTitleClick(id);
         }
     });
 
@@ -133,9 +127,17 @@
         }
     }
 
+    function createDom(tag, className) {
+        var el = document.createElement(tag);
+        el.className = className;
+        return el;
+    }
+
     function handleYearClick(year) {
         amplitude.getInstance().logEvent('Click Year', {year});
+        state.pid = null;
         state.year = year;
+        state.titleListScrollTop = 0;
         render();
     }
 
@@ -146,27 +148,25 @@
     }
 
     function render() {
-        // Restore init status
-        yearListEl.className = 'year-list';
-        yearListItemsEl.innerHTML = '';
-        titleListEl.innerHTML = '';
-        mainPartEl.innerHTML = '';
+        rootEl.innerHTML = '';
+        var yearListEl = createDom('div', 'year-list');
+        var sideBarEl = createDom('div', 'side-bar');
+        var titleListEl = createDom('div', 'title-list');
+        var mainPartEl = createDom('div', 'main-part');
+
+        yearListEl.innerHTML = `<div class="logo"><a href="/">hcsh</a></div>`;
 
         // Year list
-        if (state.pid) {
-            yearListEl.classList.add('hidden');
-        } else {
-            years.forEach(function(year) {
-                var yearTitleEl = document.createElement('div');
-                yearTitleEl.className = 'year-title';
-                yearTitleEl.textContent = year;
-                yearTitleEl.setAttribute('data-year', year);
-                if (state.year === year) {
-                    yearTitleEl.classList.add('active');
-                }
-                yearListItemsEl.appendChild(yearTitleEl);
-            });
-        }
+        years.forEach(function(year) {
+            var yearTitleEl = document.createElement('div');
+            yearTitleEl.className = 'year-title';
+            yearTitleEl.textContent = year;
+            yearTitleEl.setAttribute('data-year', year);
+            if (state.year === year) {
+                yearTitleEl.classList.add('active');
+            }
+            yearListEl.appendChild(yearTitleEl);
+        });
 
         // Title list
         posts.forEach(function(post) {
@@ -175,8 +175,8 @@
             titleEl.className = 'post-title';
             titleEl.setAttribute('data-id', post.id);
             titleEl.innerHTML = `
-                <span class="date-text">${post.date}</span>
-                <span class="title-text">${post.title}</span>
+                <span class="date-text" data-id="${post.id}">${post.date}</span>
+                <span class="title-text" data-id="${post.id}">${post.title}</span>
             `;
             if (state.pid && state.pid === post.id) {
                 titleEl.classList.add('active');
@@ -185,6 +185,10 @@
             if (!state.pid) {
                 titleListEl.scrollTop = 0;
             }
+
+        });
+        titleListEl.addEventListener('scroll', function(e) {
+            state.titleListScrollTop = titleListEl.scrollTop;
         });
 
         // Post
@@ -207,9 +211,21 @@
             mainPartEl.appendChild(postEl);
         }
 
-        // Email modal
-        
+        // Add stuff
+        sideBarEl.appendChild(yearListEl);
 
+        if (state.year) {
+            sideBarEl.appendChild(titleListEl);
+        }
+
+        rootEl.appendChild(sideBarEl);
+        rootEl.appendChild(mainPartEl);
+
+        if (!state.pid) {
+            mainPartEl.classList.add('mobile-hidden');
+        }
+
+        titleListEl.scrollTop = state.titleListScrollTop;
     }
 
     render();

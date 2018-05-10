@@ -50,9 +50,10 @@ body {
 }
 
 .journal {
-    width: 100%;
     height: 100%;
     display: flex;
+    background-color: $background-color;
+    position: relative;
 
     .close-post {
         width: 20px;
@@ -66,18 +67,34 @@ body {
     .side-bar {
         transition: all 0.3s;
         height: 100%;
-        flex: 1;
+        flex: 2;
         display: flex;
+        background-color: $background-color;
+        @media screen and (max-width: 600px) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     }
 
     .main-part {
         transition: all 0.3s;
-        flex: 2;
+        flex: 3;
         height: 100%;
+        background-color: $background-color;
+        @media screen and (max-width: 600px) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     }
 
     .year-list {
-        flex: 2;
+        flex: 1;
         height: 100%;
         overflow-y: scroll;
         border-right: 1px solid rgba(0, 0, 0, 0.1);
@@ -96,7 +113,7 @@ body {
     }
 
     .title-list {
-        flex: 3;
+        flex: 1;
         height: 100%;
         overflow-y: scroll;
         border-right: 1px solid rgba(0, 0, 0, 0.1);
@@ -132,6 +149,25 @@ body {
         .post-content {
             line-height: 1.6;
         }
+    }
+
+    .email-modal {
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%);
+        width: 300px;
+        margin: 0 auto;
+    }
+}
+
+.none {
+    pointer-events: none;
+}
+
+.mobile-hidden {
+    @media screen and (max-width: 600px) {
+        width: 0;
+        display: none;
     }
 }
 
