@@ -2,39 +2,23 @@
 layout: default
 ---
 
+<script>
+    var posts = [{% for post in site.posts %}{
+        id: `{{ post.id }}`,
+        title: '{{ post.title }}',
+        year: '{{ post.date | date: "%Y"}}',
+        date: '{{ post.date | date: "%m/%d"}}',
+        content: `{{ post.content }}`
+    },{% endfor %}];
+</script>
+
 <div class="journal">
     <div class="side-bar">
         <div class="year-list">
             <div class="logo"><a href="/">hcsh</a></div>
-        {% for post in site.posts %}
-            {% assign currentdate = post.date | date: "%Y" %}
-            {% if currentdate != date %}
-                <div class="year-title" data-year="{{ post.date | date: "%Y" }}">{{ currentdate }}</div>
-                {% assign date = currentdate %}
-            {% endif %}
-        {% endfor %}
+            <div class="year-list-items"></div>
         </div>
-        <div class="title-list">
-        {% for post in site.posts %}
-            {% if post.category != 'secret' %}
-                <div data-year="{{ post.date | date: "%Y" }}" data-pid="{{ post.id }}" class="post-title hidden">
-                    <span class="date-text">{{ post.date | date: "%m/%d" }}</span>
-                    <span class="title-text">{{ post.title }}</span>
-                </div>
-            {% endif %}
-        {% endfor %}
-        </div>
+        <div class="title-list"></div>
     </div>
-    <div class="main-part mobile-hidden">
-        {% for post in site.posts %}
-            {% if post.category != 'secret' %}
-                <article data-pid="{{ post.id }}" class="hidden">
-                    <div class="post-content">
-                        {{ post.content }}
-                    </div>
-                    <img class="close-post" src="/images/x.svg"/>
-                </article>
-            {% endif %}
-        {% endfor %}
-    </div>
+    <div class="main-part mobile-hidden"></div>
 </div>

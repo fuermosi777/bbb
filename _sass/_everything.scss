@@ -131,14 +131,14 @@ body {
     article {
         height: 100%;
         overflow-y: scroll;
-        padding: 15px;
+        padding: 30px;
         font-size: 14px;
         position: relative;
-    }
-}
 
-.tracker {
-    visibility: hidden;
+        .post-content {
+            line-height: 1.6;
+        }
+    }
 }
 
 .hidden {
