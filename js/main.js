@@ -33,7 +33,7 @@
 
     var rootEl = document.querySelector('.journal');
 
-    document.addEventListener('mousedown', function(e) {
+    document.addEventListener('click', function(e) {
         if (e.target.className === 'close-post') {
             e.stopPropagation();
             state.pid = null;
