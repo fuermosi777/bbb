@@ -166,8 +166,7 @@ body {
 
 .mobile-hidden {
     @media screen and (max-width: 600px) {
-        width: 0;
-        display: none;
+        width: 0 !important;
     }
 }
 
