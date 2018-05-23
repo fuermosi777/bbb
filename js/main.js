@@ -33,25 +33,9 @@
 
     var rootEl = document.querySelector('.journal');
 
-    document.addEventListener('click', function(e) {
-        if (e.target.className === 'close-post') {
-            e.stopPropagation();
-            state.pid = null;
-            render();
-        }
-        if (e.target.classList.contains('year-title')) {
-            e.stopPropagation();
-            var year = e.target.getAttribute('data-year');
-            handleYearClick(year);
-        }
-        if (e.target.classList.contains('post-title') ||
-            e.target.classList.contains('date-text') ||
-            e.target.classList.contains('title-text')) {
-            e.stopPropagation();
-            var id = e.target.getAttribute('data-id');
-            handleTitleClick(id);
-        }
-    });
+    document.addEventListener('touchend', handleAction)
+
+    document.addEventListener('click', handleAction);
 
     document.addEventListener('keydown', function(e) {
         if (e.keyCode === KEYCODE.ESC) {
@@ -110,6 +94,29 @@
             }
         }
     });
+
+    /**
+     * @param {Event} e
+     */
+    function handleAction(e) {
+        if (e.target.className === 'close-post') {
+            e.stopPropagation();
+            state.pid = null;
+            render();
+        }
+        if (e.target.classList.contains('year-title')) {
+            e.stopPropagation();
+            var year = e.target.getAttribute('data-year');
+            handleYearClick(year);
+        }
+        if (e.target.classList.contains('post-title') ||
+            e.target.classList.contains('date-text') ||
+            e.target.classList.contains('title-text')) {
+            e.stopPropagation();
+            var id = e.target.getAttribute('data-id');
+            handleTitleClick(id);
+        }
+    }
 
     function getYearIndex(year) {
         for (var i = 0; i < years.length; i++) {
