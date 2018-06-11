@@ -2,4 +2,16 @@
 layout: base
 ---
 
-{{ content }}
+<div class="logo"><a href="/">hcsh</a></div>
+
+<div class="content">
+    {{content}}
+</div>
+
+<div class="modal hidden">
+    <div class="box">
+        <p class="label">你的名字？</p>
+        <p><input type="text"/></p>
+        <p><button onclick="handleEnterClick();">进入</button></p>
+    </div>
+</div>

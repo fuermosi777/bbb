@@ -2,14 +2,13 @@
 layout: default
 ---
 
-<script>
-    var posts = [{% for post in site.posts %}{
-        id: `{{ post.id }}`,
-        title: '{{ post.title }}',
-        year: '{{ post.date | date: "%Y"}}',
-        date: '{{ post.date | date: "%m/%d"}}',
-        content: `{{ post.content }}`
-    },{% endfor %}];
-</script>
-
-<div class="journal"></div>
+<ul class="list">
+    {% for post in site.posts %}
+    {% if post.category != 'secret' %}
+    <li>
+        <div class="date">{{post.date | date: "%b %-d, %Y"}}</div>
+        <div class="title"><a href="{{post.url}}">{{post.title}}</a></div>
+    </li>
+    {% endif %}
+    {% endfor %}
+</ul>
