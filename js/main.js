@@ -50,4 +50,4 @@ function handleEnterClick() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', checkAndShowModal);
+// document.addEventListener('DOMContentLoaded', checkAndShowModal);
