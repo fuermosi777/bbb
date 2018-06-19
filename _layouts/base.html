@@ -5,6 +5,24 @@
 <body>
 
     {{ content }}
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAKboslFzDFoKAHRwlIyhdmLGIPPWQjAoQ",
+        authDomain: "blog-dcdf0.firebaseapp.com",
+        databaseURL: "https://blog-dcdf0.firebaseio.com",
+        projectId: "blog-dcdf0",
+        storageBucket: "blog-dcdf0.appspot.com",
+        messagingSenderId: "750079132366"
+    };
+    firebase.initializeApp(config);
+    var firestore = firebase.firestore();
+    var settings = {/* your settings... */ timestampsInSnapshots: true};
+    firestore.settings(settings);
+    </script>
+    <!-- Firbase end -->
     <div class="tracker">
     <!-- Start of StatCounter Code for Default Guide -->
     <script type="text/javascript">

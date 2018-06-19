@@ -1,53 +1,61 @@
 'use strict';
 
-var STORAGE_NAME_KEY = 'hcsh_visitor_name';
-
-var _body = document.querySelector('body');
-var _content = document.querySelector('.content');
-var _modal = document.querySelector('.modal');
-var _input = document.querySelector('input');
-
-function checkAndShowModal() {
-    var name = localStorage.getItem(STORAGE_NAME_KEY);
-    if (name) {
-        mixpanel.track('Visitor returned', {'value': name});
-    } else {
-        showModal();
-        hideContent();
-    }
+function getComments() {
+  var comments = [];
+  var path = document.location.pathname;
+  firestore.collection('comments').where('path', '==', path)
+    // .orderBy('date')
+    .get()
+    .then(function(querySnapshot) {
+      querySnapshot.forEach(function(doc) {
+        comments.push(doc.data());
+      });
+      renderComments(comments);
+    })
+    .catch(function(error) {
+      console.log("Error getting comments: ", error);
+    });
 }
 
-function showModal() {
-    _modal.classList.remove('hidden');
+function renderComments(comments) {
+  var _comments = document.querySelector('.comments');
+  if (!_comments) return;
+
+  _comments.innerHTML = '';
+
+  var _list = document.createElement('ul');
+
+  comments.forEach(function(comment) {
+    var _item = document.createElement('li');
+    _item.innerHTML = '' +
+      '<div class="comment-meta">' +
+        '<span>' + comment.name + '</span>' +
+        '<span>' + new Date(comment.date.seconds * 1000).toLocaleDateString() + '</span>' +
+      '</div>' +
+      '<div class="comment-content">' + comment.content + '</div>' +
+    '';
+    _list.appendChild(_item);
+  });
+  _comments.appendChild(_list);
 }
 
-function hideModal() {
-    _modal.classList.add('hidden');
+function makeComment() {
+  var name = document.querySelector('.comment-input-name').value;
+  var content = document.querySelector('.comment-input-content').value;
+  if (!name || !content) return;
+  firestore.collection('comments').add({
+    name: name,
+    content: content,
+    path: document.location.pathname,
+    date: new Date(),
+  })
+  .then(function(docRef) {
+    console.log("Comment written with ID: ", docRef.id);
+    getComments();
+  })
+  .catch(function(error) {
+    console.error("Error adding document: ", error);
+  });
 }
 
-function showContent() {
-    _body.appendChild(_content);
-}
-
-function hideContent() {
-    _body.removeChild(_content);
-}
-
-function handleEnterClick() {
-    var nameValue = _input.value;
-    if (!nameValue) return;
-    if (
-        // /[^\u4e00-\u9fa5]/.test(nameValue) ||
-        // nameValue.length > 4 ||
-        nameValue.length <= 2
-    ) {
-        _input.value = '';
-    } else {
-        localStorage.setItem(STORAGE_NAME_KEY, nameValue);
-        mixpanel.track('Visitor name entered', {'value': nameValue});
-        hideModal();
-        showContent();
-    }
-}
-
-// document.addEventListener('DOMContentLoaded', checkAndShowModal);
+document.addEventListener('DOMContentLoaded', getComments);

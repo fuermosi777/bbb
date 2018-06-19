@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,700,700i');
+    @import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,700,700i');
 
 @font-face {
     font-family: 'Kaushan Script';
@@ -120,6 +120,42 @@ hr {
     margin: 2em 0;
     display: block;
     border: none;
+}
+
+section.comments {
+    ul {
+        list-style-type: none;
+        padding: 0;
+        li {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            .comment-meta {
+                color: $sub-text-color;
+                display: flex;
+                justify-content: space-between;
+            }
+            .comment-content {}
+        }
+    }
+}
+
+section.comment-actions {
+    input {
+        width: 40%;
+        height: 28px;
+        border: 1px solid $border-color;
+        padding-left: 5px;
+        outline: none;
+        border-radius: 2px;
+    }
+    button {
+        border-radius: 2px;
+        height: 28px;
+        border: 1px solid $border-color;
+        background: white;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
 }
 
 div.end {
