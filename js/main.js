@@ -51,6 +51,8 @@ function makeComment() {
   })
   .then(function(docRef) {
     console.log("Comment written with ID: ", docRef.id);
+    document.querySelector('.comment-input-name').value = ''
+    document.querySelector('.comment-input-content').value = ''
     getComments();
   })
   .catch(function(error) {
