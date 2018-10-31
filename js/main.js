@@ -60,4 +60,4 @@ function makeComment() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', getComments);
+// document.addEventListener('DOMContentLoaded', getComments);
