@@ -34,7 +34,9 @@ const parser = new Parser();
           postContent += "\n\n";
         }
       });
-      fs.mkdirSync(`./_posts/${postYear}`, {recursive: true});
+      if (!fs.existsSync(`./_posts/${postYear}`)) {
+        fs.mkdirSync(`./_posts/${postYear}`, {recursive: true});
+      }
       fs.writeFileSync(postFileName, postContent, 'utf-8');
       console.log(`${postFileTitle} added.`);
     }
