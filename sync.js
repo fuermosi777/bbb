@@ -15,8 +15,8 @@ const parser = new Parser();
     let date = new Date(item.pubDate);
     let postTitle = item.title.replace(/ \./g, "-");
     let postYear = date.getFullYear();
-    let postMonth = date.getMonth() + 1;
-    let postDate = date.getDate();
+    let postMonth = ('0' + (date.getMonth() + 1)).slice(-2);
+    let postDate = ('0' + date.getDate()).slice(-2);
     let postFileTitle = `${postYear}-${postMonth}-${postDate}-${postTitle}.md`;
     let postFileName = `./_posts/${postYear}/${postFileTitle}`;
     // See if post tile already exists.
