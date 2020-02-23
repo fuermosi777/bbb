@@ -2,13 +2,28 @@
 layout: default
 ---
 
-<ul class="list">
-    {% for post in site.posts %}
-    {% if post.category != 'secret' %}
-    <li>
-        <div class="date">{{post.date | date: "%b %-d, %Y"}}</div>
-        <div class="title"><a href="{{post.url}}">{{post.title}}</a></div>
-    </li>
-    {% endif %}
-    {% endfor %}
-</ul>
+{% for post in paginator.posts %}
+    {% include post_title.html post=post linkable=true %}
+    <article>
+        {{ post.content }}
+    </article>
+{% endfor %}
+
+<hr>
+
+<!-- Pagination links -->
+<div class="pagination">
+{% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | relative_url  }}" class="previous">
+        前一页
+    </a>
+{% else %}
+{% endif %}
+<span class="page_number ">
+    {{ paginator.page }} of {{ paginator.total_pages }}
+</span>
+{% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | relative_url }}" class="next">下一页</a>
+{% else %}
+{% endif %}
+</div>

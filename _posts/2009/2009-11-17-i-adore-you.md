@@ -1,5 +1,6 @@
 ---
 layout: post
+hidden: true
 ---
 I adore you.是一句很尴尬的话。它的重要性可能介于I like you.和I love you.之间。
   

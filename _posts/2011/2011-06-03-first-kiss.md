@@ -1,5 +1,6 @@
 ---
 layout: post
+hidden: true
 --- 
 
 It's an amazing day.

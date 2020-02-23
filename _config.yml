@@ -4,13 +4,28 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: hcsh
+title: 早安，地球
 email: liuhao1990@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-   An artisan in the digital age
+   A personal blog.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://blog.liuhao.im" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
 permalink: /:year-:month-:day/:title
+
+paginate: 1
+paginate_path: "/:num/"
+
+collections:
+   category:
+      output: true
+
+defaults:
+   -
+      scope:
+         path: ""
+         type: category
+      values:
+         layout: "category"

@@ -2,8 +2,9 @@
 layout: default
 ---
 
-<h1>{{page.title}}</h1>
-<p class="date">{{page.date | date: "%b %-d, %Y"}}</p>
+{% unless post.hidden %}
+
+{% include post_title.html post=page linkable=false %}
 
 <article>
   {{page.content}}
@@ -13,10 +14,25 @@ layout: default
 
 <div class="end">
 {% if page.previous.url %}
-  <a href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
+  <a href="{{ page.previous.url | relative_url }}">&laquo; {{page.previous.title}}</a>
 {% endif %}
-<a href="/">返回</a>
+<a href={{ "/" | relative_url }}>返回</a>
 {% if page.next.url %}
-  <a href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
+  <a href="{{ page.next.url | relative_url }}">{{page.next.title}} &raquo;</a>
 {% endif %}
 </div>
+
+<button onclick="showDisqus();return false;" id="show-disqus">打开评论</button>
+
+<div id="disqus_thread">
+  <a></a>
+</div>
+<script>
+var disqus_config = function () {
+this.page.url = "{{ page.url | absolute_url }}";
+this.page.identifier = "{{ page.url }}";
+};
+</script>
+
+{% endunless %}
+                          

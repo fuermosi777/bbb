@@ -1,5 +1,6 @@
 ---
 layout: post
+hidden: true
 ---
 I feels like that I was trapped into a long melancholy nightmare.
   

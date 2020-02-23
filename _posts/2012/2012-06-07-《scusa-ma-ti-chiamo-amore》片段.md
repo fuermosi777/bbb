@@ -1,5 +1,6 @@
 ---
 layout: post
+hidden: true
 ---
 有时候对一部电影的喜爱完全融入了个人的因素。
 
