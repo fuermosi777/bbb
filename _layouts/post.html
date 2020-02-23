@@ -2,12 +2,12 @@
 layout: default
 ---
 
-{% unless post.hidden %}
-
 {% include post_title.html post=page linkable=false %}
 
 <article>
-  {{page.content}}
+  {% unless page.hidden %}
+    {{page.content}}
+  {% endunless %}
 </article>
 
 <hr>
@@ -33,6 +33,4 @@ this.page.url = "{{ page.url | absolute_url }}";
 this.page.identifier = "{{ page.url }}";
 };
 </script>
-
-{% endunless %}
                           
