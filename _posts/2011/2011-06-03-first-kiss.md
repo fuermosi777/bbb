@@ -1,6 +1,6 @@
 ---
 layout: post
-hidden: true
+category: [文字漫步]
 --- 
 
 It's an amazing day.

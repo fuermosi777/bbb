@@ -11,6 +11,7 @@ layout: default
     {% endif %}
     <div class="title-list-item">
       <div class="title"><a href="{{post.url | relative_url}}">{{post.title}}</a></div>
+      <div class="meta">{{post.date | date: "%Y.%m.%d"}}</div>
     </div>
   {% endunless %}
 {% endfor %}
