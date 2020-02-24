@@ -24,3 +24,5 @@ I couldn't wait but put my lips on hers quickly.
 Then I lost my mind, thinking that the whole world had stopped rotate, the wind had stopped flow and the air had become condense. I closed my eyes and tried to feel, to touch with my lips and to fuse myself into her body.
 
 It's amazing, really.
+
+![](/photos/0DA0BD13-9643-4D3C-94B6-85300F561668.jpeg)
