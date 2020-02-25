@@ -25,4 +25,4 @@ Then I lost my mind, thinking that the whole world had stopped rotate, the wind 
 
 It's amazing, really.
 
-![](/photos/0DA0BD13-9643-4D3C-94B6-85300F561668.jpeg)
+![]({{ site.photourl }}/photos/0DA0BD13-9643-4D3C-94B6-85300F561668.jpeg)
