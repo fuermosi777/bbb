@@ -188,6 +188,10 @@ button#show-disqus {
     }
 }
 
+.dynamic {
+    display: none;
+}
+
 #disqus_thread {
     a {
         color: $link-color;

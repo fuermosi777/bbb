@@ -13,3 +13,28 @@ function showDisqus() {
     button.parentElement.removeChild(button);
   }
 }
+
+function getParameterByName(name, url) {
+  if (!url) url = window.location.href;
+  name = name.replace(/[\[\]]/g, '\\$&');
+  var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+      results = regex.exec(url);
+  if (!results) return null;
+  if (!results[2]) return '';
+  return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+function showDynamic() {
+  let dynamicContentShow = getParameterByName('dc');
+  if (dynamicContentShow) {
+    let tags = document.querySelectorAll('.dynamic');
+    for (let i = 0; i < tags.length; i++) {
+      let tag = tags[i];
+      if (tag.dataset.show === dynamicContentShow || tag.dataset.show === 'any') {
+        tag.classList.remove('dynamic');
+      }
+    }
+  }
+}
+
+document.addEventListener("DOMContentLoaded", showDynamic);
