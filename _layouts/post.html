@@ -14,15 +14,22 @@ layout: default
 
 <div class="end">
 {% if page.previous.url %}
-  <a href="{{ page.previous.url | relative_url }}">&laquo; {{page.previous.title}}</a>
+  <div class="prev">
+    <div class="tag">OLD</div>
+    {% include post_list_title.html post=page.previous %}
+  </div>
 {% endif %}
-<a href={{ "/" | relative_url }}>返回</a>
+
 {% if page.next.url %}
-  <a href="{{ page.next.url | relative_url }}">{{page.next.title}} &raquo;</a>
+  <div class="next">
+    <div class="tag">NEW</div>
+    {% include post_list_title.html post=page.next %}
+  </div>
 {% endif %}
 </div>
 
-<button onclick="showDisqus();return false;" id="show-disqus">打开评论</button>
+<a class="bottom-button" href={{ "/" | relative_url }}>返回</a>
+<button onclick="showDisqus();return false;" id="show-disqus" class="bottom-button">留言</button>
 
 <div id="disqus_thread">
   <a></a>

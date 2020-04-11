@@ -6,12 +6,6 @@ layout: base
     <div class="leading">
         <a href={{ "/" | relative_url }} class="logo">{{ site.title }}</a>
     </div>
-    <div class="rest">
-        {% for category in site.categories %}
-        <a href="{{ site.baseurl }}/category/{{ category | first | slugify }}">{{ category | first }}</a>{% if forloop.last == false %}<span class="separator"> | </span>{% endif %}
-        {% endfor %}
-        <span class="separator"> | </span><a href={{ "/archive" | relative_url }} title="全部日志">旧时光</a>
-    </div>
 </div>
 
 <div class="content">

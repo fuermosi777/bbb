@@ -14,23 +14,20 @@ function showDisqus() {
   }
 }
 
-function getParameterByName(name, url) {
-  if (!url) url = window.location.href;
-  name = name.replace(/[\[\]]/g, '\\$&');
-  var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-      results = regex.exec(url);
-  if (!results) return null;
-  if (!results[2]) return '';
-  return decodeURIComponent(results[2].replace(/\+/g, ' '));
+function getHashTag() {
+  if (window.location.hash) {
+    return window.location.hash.substring(1);
+  }
+  return '';
 }
 
 function showDynamic() {
-  let dynamicContentShow = getParameterByName('dc');
-  if (dynamicContentShow) {
+  let hashTag = getHashTag();
+  if (hashTag) {
     let tags = document.querySelectorAll('.dynamic');
     for (let i = 0; i < tags.length; i++) {
       let tag = tags[i];
-      if (tag.dataset.show === dynamicContentShow || tag.dataset.show === 'any') {
+      if (tag.dataset.show === hashTag || tag.dataset.show === 'any') {
         tag.classList.remove('dynamic');
       }
     }
