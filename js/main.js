@@ -18,18 +18,24 @@ function getHashTag() {
   if (window.location.hash) {
     return window.location.hash.substring(1);
   }
-  return '';
+  return "";
 }
 
 function showDynamic() {
   let hashTag = getHashTag();
   if (hashTag) {
-    let tags = document.querySelectorAll('.dynamic');
+    let tags = document.querySelectorAll(".dynamic");
     for (let i = 0; i < tags.length; i++) {
       let tag = tags[i];
-      if (tag.dataset.show === hashTag || tag.dataset.show === 'any') {
-        tag.classList.remove('dynamic');
+      if (tag.dataset.show === hashTag || tag.dataset.show === "any") {
+        tag.classList.remove("dynamic");
       }
+    }
+    // If found hashtag in current path. Append it on-the-fly.
+    let links = document.querySelectorAll("a");
+    for (let i = 0; i < links.length; i++) {
+      let link = links[i];
+      link.href += "#" + hashTag;
     }
   }
 }
