@@ -2,28 +2,18 @@
 layout: default
 ---
 
-{% for post in paginator.posts %}
+{% for post in site.posts limit:7 %}
+    {% if forloop.first %}
     {% include post_title.html post=post linkable=true %}
-    <article>
-        {{ post.content }}
-    </article>
+    <a class="article-preview-link" href="{{ post.url | relative_url }}">
+        <article>
+            {{ post.excerpt }}...
+        </article>
+    </a>
+    <hr/>
+    {% else %}
+    {% include post_list_title.html post=post %}
+    {% endif %}
 {% endfor %}
 
-<hr>
-
-<!-- Pagination links -->
-<div class="pagination">
-{% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | relative_url  }}" class="previous">
-        前一页
-    </a>
-{% else %}
-{% endif %}
-<span class="page_number ">
-    {{ paginator.page }} of {{ paginator.total_pages }}
-</span>
-{% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | relative_url }}" class="next">下一页</a>
-{% else %}
-{% endif %}
-</div>
+<a class="bottom-button" title="Load More" href="/archive">更多</a>
