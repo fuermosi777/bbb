@@ -6,13 +6,11 @@
 
 $s: "only screen and (max-width : 779px)";
 $l: "only screen and (min-width : 780px)";
-$background-color: #FFFFFF;
+$background-color: #ffffff;
 $text-color: #000;
 $sub-text-color: #757575;
 $border-color: #efefef;
-$link-color: #A36334;
+$link-color: #a36334;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "everything"
-;
+@import "everything";
