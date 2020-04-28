@@ -15,14 +15,14 @@ layout: default
 <div class="end">
 {% if page.previous.url %}
   <div class="prev">
-    <div class="tag">OLD</div>
+    <div class="tag">旧一篇</div>
     {% include post_list_title.html post=page.previous %}
   </div>
 {% endif %}
 
 {% if page.next.url %}
   <div class="next">
-    <div class="tag">NEW</div>
+    <div class="tag">新一篇</div>
     {% include post_list_title.html post=page.next %}
   </div>
 {% endif %}
