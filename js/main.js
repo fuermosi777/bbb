@@ -24,11 +24,11 @@ function getHashTag() {
 function showDynamic() {
   let hashTag = getHashTag();
   if (hashTag) {
-    let tags = document.querySelectorAll(".dynamic");
+    let tags = document.querySelectorAll(".hidden");
     for (let i = 0; i < tags.length; i++) {
       let tag = tags[i];
       if (tag.dataset.show === hashTag || tag.dataset.show === "any") {
-        tag.classList.remove("dynamic");
+        tag.classList.remove("hidden");
       }
     }
     // If found hashtag in current path. Append it on-the-fly.
