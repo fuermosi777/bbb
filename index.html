@@ -3,17 +3,7 @@ layout: default
 ---
 
 {% for post in site.posts limit:7 %}
-    {% if forloop.first %}
-    {% include post_title.html post=post linkable=true %}
-    <a class="article-preview-link" href="{{ post.url | relative_url }}">
-        <article>
-            {{ post.excerpt }}...
-        </article>
-    </a>
-    <hr/>
-    {% else %}
     {% include post_list_title.html post=post %}
-    {% endif %}
 {% endfor %}
 
-<a class="bottom-button" title="Load More" href="/archive">更多</a>
+<a class="bottom-button" title="更多文章" href="/archive">更多</a>
