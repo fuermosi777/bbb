@@ -121,12 +121,25 @@ body {
   text-align: center;
 }
 
+.draft-badge {
+  display: inline-block;
+  background: rgba(105, 64, 33, 0.2);
+  margin: 0 5px;
+  font-size: 1rem;
+  border-radius: 4px;
+  padding: 2px 4px;
+}
+
 article {
   font-size: 1.5rem;
   color: $post-color;
   p {
     margin-bottom: 20px;
     line-height: 1.618;
+  }
+
+  h2 {
+    font-size: 1.7rem;
   }
 
   img {
