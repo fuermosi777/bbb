@@ -1,262 +1,252 @@
 * {
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 
 html {
-  margin: 0;
-  font-size: 62.5%;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  height: 100%;
-  font-family: "Noto Serif SC", serif;
+    margin: 0;
+    font-size: 62.5%;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    height: 100%;
+    font-family: "Noto Serif SC", serif;
 }
 
 body {
-  margin: 0;
-  color: $text-color;
-  font-size: 13px;
-  font-weight: 500;
-  width: 100%;
-  font-size: 1.3rem;
-  letter-spacing: 0.04rem;
-  background-color: $background-color;
+    margin: 0;
+    color: $text-color;
+    font-size: 13px;
+    font-weight: 500;
+    width: 100%;
+    font-size: 1.3rem;
+    letter-spacing: 0.04rem;
+    background-color: $background-color;
 }
 
 // Top horizontal menu bar.
 .menu-bar {
-  max-width: 640px;
-  padding: 20px;
-  font-size: 1.4rem;
-  margin: 20px auto 20px;
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-
-  a.logo {
-    color: $link-color;
-    text-decoration: none;
-    font-weight: 700;
-  }
-
-  .separator {
-    color: $sub-text-color;
-  }
-
-  .rest {
+    max-width: 640px;
+    padding: 20px;
     font-size: 1.4rem;
+    margin: 20px auto 20px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
 
-    a {
-      color: $sub-text-color;
-      text-decoration: none;
-
-      &:hover {
+    a.logo {
         color: $link-color;
-      }
+        text-decoration: none;
+        font-weight: 700;
     }
-  }
+
+    .separator {
+        color: $sub-text-color;
+    }
+
+    .rest {
+        font-size: 1.4rem;
+
+        a {
+            color: $sub-text-color;
+            text-decoration: none;
+
+            &:hover {
+                color: $link-color;
+            }
+        }
+    }
 }
 
 // Main content.
 .content {
-  max-width: 640px;
-  padding: 20px;
-  margin: 0 auto;
+    max-width: 640px;
+    padding: 20px;
+    margin: 0 auto;
 }
 
 // Title in both index and post page.
 .title {
-  font-size: 1.6rem;
-  color: $text-color;
-
-  a {
-    text-decoration: none;
+    font-size: 1.6rem;
     color: $text-color;
 
-    &:hover {
-      text-decoration: underline;
-    }
+    a {
+        text-decoration: none;
+        color: $text-color;
 
-    &:visited {
-      color: $sub-text-color;
+        &:hover {
+            text-decoration: underline;
+        }
+
+        &:visited {
+            color: $sub-text-color;
+        }
     }
-  }
 }
 
 .meta {
-  color: $sub-text-color;
+    color: $sub-text-color;
 }
 
 // Title preview in the archive list.
 .title-list-item {
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
 
-  a:hover {
-    color: $link-color;
-    text-decoration: none;
-  }
+    a:hover {
+        color: $link-color;
+        text-decoration: none;
+    }
 
-  .meta {
-    margin-right: 8px;
-    font-size: 1.2rem;
-  }
+    .meta {
+        margin-right: 8px;
+        font-size: 1.2rem;
+    }
 }
 
 .title-item-year {
-  font-size: 1.4rem;
-  color: $text-color;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  font-weight: bold;
-  text-align: center;
+    font-size: 1.4rem;
+    color: $text-color;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
 }
 
 .draft-badge {
-  display: inline-block;
-  background: rgba(105, 64, 33, 0.2);
-  margin: 0 5px;
-  font-size: 1rem;
-  border-radius: 4px;
-  padding: 2px 4px;
+    display: inline-block;
+    background: rgba(105, 64, 33, 0.2);
+    margin: 0 5px;
+    font-size: 1rem;
+    border-radius: 4px;
+    padding: 2px 4px;
 }
 
 article {
-  font-size: 1.5rem;
-  color: $post-color;
-  p {
-    margin-bottom: 20px;
-    line-height: 1.618;
-  }
+    font-size: 1.5rem;
+    color: $post-color;
 
-  h2 {
-    font-size: 1.7rem;
-  }
-
-  img {
-    width: 100%;
-    border-radius: 6px;
-  }
-
-  img[src*="#two-column"] {
-    width: 49%;
-  }
-
-  blockquote {
-    background-color: $border-color;
-    margin: 0;
-    padding: 2px 18px;
-    border-radius: 6px;
-  }
-
-  ul {
-    padding-left: 18px;
-
-    li {
-      margin-bottom: 5px;
+    p {
+        margin-bottom: 20px;
+        line-height: 1.618;
     }
-  }
+
+    h2 {
+        font-size: 1.7rem;
+    }
+
+    img {
+        width: 100%;
+        border-radius: 6px;
+    }
+
+    img[src*="#two-column"] {
+        width: 49%;
+    }
+
+    blockquote {
+        background-color: $border-color;
+        margin: 0;
+        padding: 2px 18px;
+        border-radius: 6px;
+    }
+
+    ul {
+        padding-left: 18px;
+
+        li {
+            margin-bottom: 5px;
+        }
+    }
 }
 
 hr {
-  background: #dddddd;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(rgba(255, 255, 255, 0)),
-    color-stop(#ccc),
-    to(rgba(255, 255, 255, 0))
-  );
-  background: -webkit-linear-gradient(
-    left,
-    rgba(255, 255, 255, 0),
-    #ccc,
-    rgba(255, 255, 255, 0)
-  );
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0),
-    #ccc,
-    rgba(255, 255, 255, 0)
-  );
-  height: 1px;
-  margin: 2em 0;
-  display: block;
-  border: none;
+    background: #dddddd;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), color-stop(#ccc), to(rgba(255, 255, 255, 0)));
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), #ccc, rgba(255, 255, 255, 0));
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), #ccc, rgba(255, 255, 255, 0));
+    height: 1px;
+    margin: 2em 0;
+    display: block;
+    border: none;
 }
 
 .pagination {
-  a {
-    text-decoration: none;
-    color: $link-color;
-  }
+    a {
+        text-decoration: none;
+        color: $link-color;
+    }
 }
 
 div.end {
-  margin: 60px 0;
-  display: flex;
-  justify-content: space-between;
+    margin: 60px 0;
+    display: flex;
+    justify-content: space-between;
 
-  a {
-    color: $sub-text-color;
-    font-size: 1.5rem;
-    text-decoration: none;
+    a {
+        color: $sub-text-color;
+        font-size: 1.5rem;
+        text-decoration: none;
 
-    &:hover {
-      text-decoration: underline;
+        &:hover {
+            text-decoration: underline;
+        }
     }
-  }
 }
 
 button#show-disqus {
-  padding: 8px;
-  border: 1px solid $border-color;
-  background-color: $background-color;
-  color: $sub-text-color;
-  font-size: 1.3rem;
-  border-radius: 4px;
-  margin: 0 auto 20px;
-  display: block;
-  transition: all 0.2s;
-  outline: none;
+    padding: 8px;
+    border: 1px solid $border-color;
+    background-color: $background-color;
+    color: $sub-text-color;
+    font-size: 1.3rem;
+    border-radius: 4px;
+    margin: 0 auto 20px;
+    display: block;
+    transition: all 0.2s;
+    outline: none;
 
-  &:hover {
-    cursor: pointer;
-    color: $link-color;
-  }
+    &:hover {
+        cursor: pointer;
+        color: $link-color;
+    }
 }
 
 a.bottom-button {
-  display: block;
-  text-decoration: none;
-  margin-top: 40px;
-  color: $text-color;
-  &:hover {
-    color: $link-color;
-  }
+    display: block;
+    text-decoration: none;
+    margin-top: 40px;
+    color: $text-color;
+
+    &:hover {
+        color: $link-color;
+    }
 }
 
 a.article-preview-link,
 a.title-list-item-link {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 #disqus_thread {
-  a {
-    color: $link-color;
-  }
+    a {
+        color: $link-color;
+    }
 }
 
 .hidden {
-  display: none;
+    display: none;
+}
+
+iframe {
+    width: 640px;
+    height: 460px;
 }
