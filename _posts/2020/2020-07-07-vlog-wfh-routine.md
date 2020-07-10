@@ -1,7 +1,7 @@
 ---
 layout: post
 categories: [vlog]
-title: 科学严谨地记录一个湾区程序员在家工作的一天
+title: VLOG-6.科学严谨地记录一个湾区程序员在家工作的一天
 draft: true
 ---
 
@@ -57,11 +57,11 @@ Show Me The Way by Vendredi https://soundcloud.com/vendrediduo Creative Commons 
 
 Note:
 
-- 去车库早晨
-- 返回 旁白（可以睡觉了）
-- 冲咖啡片段
-- 上午 键盘特写
-- 拿咖啡到电脑桌上
-- 打开电脑的部分
-- 办公 clone
-- 吉他片段
+- [x] 去车库早晨
+- [x] 返回 旁白（可以睡觉了）
+- [x] 冲咖啡片段
+- [x] 上午 键盘特写
+- [x] 拿咖啡到电脑桌上
+- [ ] 打开电脑的部分
+- [x] 办公 clone
+- [x] 吉他片段
