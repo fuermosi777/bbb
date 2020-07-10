@@ -1,16 +1,32 @@
 ---
 layout: post
 categories: [vlog]
-title: 湾区程序员｜在家工作日常
+title: 科学严谨地记录一个湾区程序员在家工作的一天
 draft: true
 ---
 
 ## Ep6
 
-（有留言提到说互联网带来窥私欲，有很多人想知道在湾区大厂程序员的生活是怎样。最近在家工作太久太久，想制作一期平常在家工作的一天。）
+Music 备选：
+
+Dream of me - Jack CC
+
+You’re free to use this song in any of your videos, but you must include the following in your video description:
+Old Bossa by Twin Musicom is licensed under a Creative Commons Attribution license (https://creativecommons.org/licenses/by/4.0/)
+Artist: http://www.twinmusicom.org/
+
+Airport Lounge - Disco Ultralounge by Kevin MacLeod is licensed under a Creative Commons Attribution license (https://creativecommons.org/licenses/by/4.0/)
+Source: http://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100806
+Artist: http://incompetech.com/
+
+Show Me The Way by Vendredi https://soundcloud.com/vendrediduo Creative Commons — Attribution 3.0 Unported — CC BY 3.0 http://creativecommons.org/licenses/by/3.0/ Music promoted by Audio Library https://youtu.be/ZcAiMZtYrv8
+
+6:59AM
+（起床，长焦）
+
+现在是早上 7 点多，刚才被隔壁的大妈敲门吵醒。她说她刚从健身房回家，看到我车子的后备箱没关，过来提醒我一下。我昨天确实开车出去买菜了，不过记得好像是
 
 8:30am
-（起床，长焦，从床的侧后方望向床头柜）
 （床头柜特写）
 （植物浇水）（多重转场）
 
@@ -38,3 +54,14 @@ draft: true
 
 9:00pm
 （跳绳）
+
+Note:
+
+- 去车库早晨
+- 返回 旁白（可以睡觉了）
+- 冲咖啡片段
+- 上午 键盘特写
+- 拿咖啡到电脑桌上
+- 打开电脑的部分
+- 办公 clone
+- 吉他片段
