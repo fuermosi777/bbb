@@ -1,67 +1,11 @@
 ---
 layout: post
-categories: [vlog]
-title: VLOG-6.科学严谨地记录一个湾区程序员在家工作的一天
-draft: true
+categories: [文字漫步]
+title: 无题
 ---
 
-## Ep6
+七月份了。疫情没有缓和的迹象。若干年以后，我肯定会对这一年记忆犹新。它让我明白了很多看似“永恒”或者“稳定”的东西是那么的短暂和脆弱不堪。凡事都有两面性。因为疫情而不得不在家的事实让我增加一些爱好，比如拍视频什么的。有时候也重拾以前的爱好，比如画画。而对写代码这件事的热情有些消退了。算下来已经快三个礼拜没有正儿八经写过副业了。一方面是时间被其他事情占据，另一方面是感觉到付出没有收获。
 
-Music 备选：
+这里的副业指的是和大叔的合作项目，一款能够管理自我专利申请的爱啪啪。我实际上花了大量时间（接近两年）来做这件事，可能就是没有运气吧。如果沸腾的水指的是一个成功的产品，那我的这项事业目前还出于刚刚开火状态。不知道大叔的状态如何，但是他也很久没有联系过我了，所以我对合伙人的心思算是一无所知。
 
-Dream of me - Jack CC
-
-You’re free to use this song in any of your videos, but you must include the following in your video description:
-Old Bossa by Twin Musicom is licensed under a Creative Commons Attribution license (https://creativecommons.org/licenses/by/4.0/)
-Artist: http://www.twinmusicom.org/
-
-Airport Lounge - Disco Ultralounge by Kevin MacLeod is licensed under a Creative Commons Attribution license (https://creativecommons.org/licenses/by/4.0/)
-Source: http://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100806
-Artist: http://incompetech.com/
-
-Show Me The Way by Vendredi https://soundcloud.com/vendrediduo Creative Commons — Attribution 3.0 Unported — CC BY 3.0 http://creativecommons.org/licenses/by/3.0/ Music promoted by Audio Library https://youtu.be/ZcAiMZtYrv8
-
-6:59AM
-（起床，长焦）
-
-现在是早上 7 点多，刚才被隔壁的大妈敲门吵醒。她说她刚从健身房回家，看到我车子的后备箱没关，过来提醒我一下。我昨天确实开车出去买菜了，不过记得好像是
-
-8:30am
-（床头柜特写）
-（植物浇水）（多重转场）
-
-9:10am
-（做早餐）
-
-10:00am
-（组会）
-（上午工作）
-
-12:00pm
-（午餐、取外卖）
-
-1:30pm
-（工作、站立办公、开会）
-
-4:30pm
-（弹琴休息）
-
-6:00pm
-（晚餐，意面）
-
-7:00pm
-（看电视）
-
-9:00pm
-（跳绳）
-
-Note:
-
-- [x] 去车库早晨
-- [x] 返回 旁白（可以睡觉了）
-- [x] 冲咖啡片段
-- [x] 上午 键盘特写
-- [x] 拿咖啡到电脑桌上
-- [ ] 打开电脑的部分
-- [x] 办公 clone
-- [x] 吉他片段
+现在的生活还好，由于活动量减少而有些不那么健康。对于视频拍摄处于热恋期，所以每天都有新的想法，勇于尝试。这几天的天气特别好，不太热也不太冷，就是有时候风有点大，刚扫的院子又落满了叶子或种子，让人恼火。
