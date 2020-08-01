@@ -29,6 +29,8 @@ function showDynamic() {
       let tag = tags[i];
       if (tag.dataset.show === hashTag || tag.dataset.show === "any") {
         tag.classList.remove("hidden");
+      } else {
+        tag.parentNode.removeChild(tag);
       }
     }
     // If found hashtag in current path. Append it on-the-fly.
