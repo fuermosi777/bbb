@@ -1,105 +1,18 @@
 ---
-layout: base
+layout: training
 ---
 
 # 老爸健身训练计划
 
-纲领：每周训练 3-4 天，不训练的时间充分休息，如果有对应该动作的器械，优先用器械，防止受伤
+<div class="alert alert-warning" role="alert">
+  每周训练 3-4 天，不训练的时间充分休息，如果有对应该动作的器械，优先用器械，防止受伤。每次健身、每个动作前都要热身。
+</div>
 
 ---
 
-## 周一，手臂，四个动作
-
-### **热身**（跑步机快走或者慢跑五分钟），活动一下肩部关节
-
-### 二头肌，哑铃弯举，12x3 组
-
-![]({{ site.photourl }}/photos/哑铃弯举.gif)
-
-### 二头肌，杠铃弯举（注意切换宽握和窄握），12x4 组
-
-![]({{ site.photourl }}/photos/杠铃弯举.gif)
-
-### 三头肌，绳索下拉臂屈伸，每组 10-12 次，一共 3-5 组
-
-注意：肘部固定，只用三头发力
-
-![]({{ site.photourl }}/photos/绳索屈伸.gif)
-
-### 三头肌，平板哑铃臂屈伸，每组 10-12 次，一共 3-5 组
-
-![]({{ site.photourl }}/photos/平板哑铃臂屈伸.gif)
-
-### 椭圆机 20-30 分钟
-
----
-
-## 周三，胸、背
-
-### 热身，扩胸运动、绕肩膀环绕，慢跑 5 分钟
-
-### 俯卧撑，每组 10-15 个，做 5 组，一共五十个，组间休息 1 分钟-1 分半
-
-注意肩膀与身体之间要小于 90 度夹角，防止肩膀受伤
-
-### 器械推胸，每组 10 个，做 3-5 组
-
-![]({{ site.photourl }}/photos/器械推胸.gif)
-
-### 绳索夹胸，每组 10 个，做 3-5 组
-
-![]({{ site.photourl }}/photos/绳索夹胸.gif)
-
-### 宽距下拉
-
-![]({{ site.photourl }}/photos/宽距下拉.gif)
-
-### 平板单臂划船
-
-![]({{ site.photourl }}/photos/哑铃划船.gif)
-
-### 椭圆机 20-30 分钟
-
----
-
-## 周五，肩、腹
-
-### 热身，慢跑五分钟，绕肩膀环绕
-
-### 哑铃前平举，每组 10 个，做 3-5 组
-
-![]({{ site.photourl }}/photos/哑铃前平举.gif)
-
-### 哑铃侧平举，每组 10 个，做 3-5 组
-
-![]({{ site.photourl }}/photos/哑铃侧平举.gif)
-
-### 器械推肩，每组 10 个，做 3-5 组
-
-![]({{ site.photourl }}/photos/器械推肩.gif)
-
-### 卷腹，每组 10 个，做 3-5 组
-
-![]({{ site.photourl }}/photos/卷腹.gif)
-
-### 椭圆机 20-30 分钟
-
----
-
-## 周日，腿
-
-### 热身，慢跑五分钟、或者椭圆机上五分钟
-
-### 哑铃深蹲，每组 10 个，做 3-5 组
-
-![]({{ site.photourl }}/photos/哑铃深蹲.gif)
-
-### 器械，腿弯举，每组 10 个，做 3-5 组
-
-![]({{ site.photourl }}/photos/腿弯举.gif)
-
-### 器械，腿屈伸，每组 10 个，做 3-5 组
-
-![]({{ site.photourl }}/photos/腿屈伸.gif)
-
-### 今天不用椭圆机有氧训练
+- [手臂训练]({{ "/training/arm" | relative_url }})
+- [胸肌训练]({{ "/training/chest" | relative_url }})
+- [背部训练]({{ "/training/back" | relative_url }})
+- [肩膀训练]({{ "/training/shoulder" | relative_url }})
+- [腹部（核心）训练]({{ "/training/core" | relative_url }})
+- [腿部训练]({{ "/training/leg" | relative_url }})
