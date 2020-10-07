@@ -2,8 +2,7 @@
 layout: default
 ---
 
-{% for post in site.posts limit:7 %}
-    {% include post_list_title.html post=post %}
-{% endfor %}
+{% for post in site.posts limit:7 %} {% include post_list_title.html post=post
+%} {% endfor %}
 
-<a class="bottom-button" title="更多文章" href="/archive">更多</a>
+<a class="bottom-button" title="归档" href="/archive">归档</a>
