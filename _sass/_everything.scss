@@ -75,6 +75,7 @@ body {
     font-size: 1.6rem;
     color: $text-color;
     font-weight: 500;
+    margin-bottom: 1rem;
 
     a {
       text-decoration: none;
@@ -132,7 +133,7 @@ body {
 
 article {
   font-size: 1.5rem;
-  color: $post-color;
+  color: $text-color;
 
   p {
     margin-bottom: 1.8rem;
