@@ -110,6 +110,7 @@ body {
   .title {
     font-size: 1.4rem;
     color: $text-color;
+    margin-bottom: 0;
   }
 }
 
@@ -252,10 +253,11 @@ a.bottom-button {
   }
 }
 
-a.article-preview-link,
 a.title-list-item-link {
   text-decoration: none;
-  color: $tint-color;
+  &:hover {
+    color: $tint-color;
+  }
 }
 
 #disqus_thread {
