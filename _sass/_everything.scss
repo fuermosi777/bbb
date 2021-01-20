@@ -42,7 +42,7 @@ body {
   justify-content: space-between;
 
   a.logo {
-    color: $link-color;
+    color: $tint-color;
     text-decoration: none;
   }
 
@@ -58,7 +58,7 @@ body {
       text-decoration: none;
 
       &:hover {
-        color: $link-color;
+        color: $tint-color;
       }
     }
   }
@@ -69,46 +69,46 @@ body {
   max-width: 640px;
   padding: 20px;
   margin: 0 auto;
-}
 
-// Title in both index and post page.
-.title {
-  font-size: 1.6rem;
-  color: $text-color;
-  font-weight: 500;
-
-  a {
-    text-decoration: none;
+  // Title in post page.
+  .title {
+    font-size: 1.6rem;
     color: $text-color;
+    font-weight: 500;
 
-    &:hover {
-      text-decoration: underline;
-    }
+    a {
+      text-decoration: none;
+      color: $text-color;
 
-    &:visited {
-      color: $sub-text-color;
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &:visited {
+        color: $sub-text-color;
+      }
     }
+  }
+
+  .meta {
+    color: $sub-text-color;
   }
 }
 
-.meta {
-  color: $sub-text-color;
-}
-
-// Title preview in the archive list.
+// Title preview in the index/archive list.
 .title-list-item {
   margin-bottom: 10px;
   display: flex;
   align-items: center;
 
-  a:hover {
-    color: $link-color;
-    text-decoration: none;
-  }
-
   .meta {
     margin-right: 8px;
     font-size: 1.2rem;
+  }
+
+  .title {
+    font-size: 1.4rem;
+    color: $text-color;
   }
 }
 
@@ -117,7 +117,7 @@ body {
   color: $text-color;
   margin-top: 40px;
   margin-bottom: 20px;
-  font-weight: bold;
+  font-weight: 500;
   text-align: center;
 }
 
@@ -140,6 +140,7 @@ article {
   }
 
   h2 {
+    color: $tint-color;
     font-size: 1.7rem;
     font-weight: 500;
     padding-top: 1.2rem;
@@ -201,7 +202,7 @@ hr {
 .pagination {
   a {
     text-decoration: none;
-    color: $link-color;
+    color: $tint-color;
   }
 }
 
@@ -235,7 +236,7 @@ button#show-disqus {
 
   &:hover {
     cursor: pointer;
-    color: $link-color;
+    color: $tint-color;
   }
 }
 
@@ -246,18 +247,19 @@ a.bottom-button {
   color: $text-color;
 
   &:hover {
-    color: $link-color;
+    color: $tint-color;
   }
 }
 
 a.article-preview-link,
 a.title-list-item-link {
   text-decoration: none;
+  color: $tint-color;
 }
 
 #disqus_thread {
   a {
-    color: $link-color;
+    color: $tint-color;
   }
 }
 
