@@ -75,7 +75,7 @@ body {
 .title {
   font-size: 1.6rem;
   color: $text-color;
-  margin-bottom: 15px;
+  font-weight: 500;
 
   a {
     text-decoration: none;
@@ -135,12 +135,14 @@ article {
   color: $post-color;
 
   p {
-    margin-bottom: 20px;
+    margin-bottom: 1.8rem;
     line-height: 1.618;
   }
 
   h2 {
     font-size: 1.7rem;
+    font-weight: 500;
+    padding-top: 1.2rem;
   }
 
   img {
