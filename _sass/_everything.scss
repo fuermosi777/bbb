@@ -1,3 +1,5 @@
+$phone: "(max-width: 500px)";
+
 * {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
@@ -90,6 +92,10 @@ body {
     font-weight: 500;
     margin-bottom: 1rem;
 
+    @media #{$phone} {
+      font-size: 2rem;
+    }
+
     a {
       text-decoration: none;
       color: $text-color;
@@ -118,6 +124,9 @@ body {
   .meta {
     margin-right: 8px;
     font-size: 1.2rem;
+
+    @media #{$phone} {
+    }
   }
 
   .title {
