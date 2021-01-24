@@ -35,7 +35,7 @@ body {
 .menu-bar {
   max-width: 640px;
   padding: 20px;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   margin: 20px auto 20px;
   align-items: center;
   display: flex;
@@ -63,7 +63,7 @@ body {
     color: $sub-text-color;
   }
 
-  .rest {
+  .trailing {
     font-size: 1.4rem;
 
     a {
@@ -121,14 +121,14 @@ body {
   }
 
   .title {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     color: $text-color;
     margin-bottom: 0;
   }
 }
 
 .title-item-year {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: $text-color;
   margin-top: 40px;
   margin-bottom: 20px;
@@ -260,6 +260,7 @@ a.bottom-button {
   text-decoration: none;
   margin-top: 40px;
   color: $text-color;
+  font-size: 1.4rem;
 
   &:hover {
     color: $tint-color;
@@ -290,4 +291,8 @@ iframe {
   img {
     max-width: 100%;
   }
+}
+
+img.xxpic {
+  max-width: 100%;
 }

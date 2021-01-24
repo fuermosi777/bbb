@@ -3,5 +3,8 @@
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 75
   },
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "search.exclude": {
+    "**/lib": true
+  }
 }
