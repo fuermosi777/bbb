@@ -1,7 +1,6 @@
 ---
 layout: post
-hidden: true
---- 
+---
 
 It's an amazing day.
 
@@ -10,7 +9,7 @@ In short, we had a fight in the afternoon and I kissed her at night. Then we kis
 After the fight via sms, I realized that I might was jeopardizing this invaluable relationship. Thus I went to her bedchamber, inviting her to dinner on my way there. Loath but approbatory, she promised that she would be come downstairs in a few minutes. After "a few minutes"-technically twenty minutes, I saw her and I know she was still extremely angry with me.
 
 After dinner, we decided to do something to spend the Eve of Duanwu. She proposed we drink beers. I knew that she scared me a little bit. After all I haven't met any girl who would like to drink beers to spend a night. It means that she is either a lunatic, or was in a very big mood.
-  
+
 We went to a large market and buy some beers, domestic and external, and some other snacks. We then went to a octagonal pavilion where there is few people around. Now I would like to call it "the holy pavilion of love".
 
 We spent an hour taking about each other and our stories, drinking beers, and when I finished them, I could feel alcohol was doing something to my body, driving me a little more nag. I couldn't help enclosing her and touching her arms. I watched her spectacularly pretty eyes and suddenly, I kissed her hair.
