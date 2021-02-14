@@ -31,6 +31,10 @@ body {
   letter-spacing: 0.04rem;
   background-color: $background-color;
   padding: 15px;
+
+  @media #{$phone} {
+    padding: 0;
+  }
 }
 
 // Top horizontal menu bar.
@@ -42,6 +46,10 @@ body {
   align-items: center;
   display: flex;
   justify-content: space-between;
+
+  @media #{$phone} {
+    font-size: 1.68rem;
+  }
 
   a.logo {
     color: $text-color;
@@ -124,9 +132,6 @@ body {
   .meta {
     margin-right: 8px;
     font-size: 1.2rem;
-
-    @media #{$phone} {
-    }
   }
 
   .title {
@@ -157,6 +162,10 @@ body {
 article {
   font-size: 1.45rem;
   color: $text-color;
+
+  @media #{$phone} {
+    font-size: 1.65rem;
+  }
 
   p {
     margin-bottom: 1.8rem;
@@ -234,6 +243,10 @@ div.end {
   margin: 60px 0;
   display: flex;
   justify-content: space-between;
+
+  @media #{$phone} {
+    flex-direction: column;
+  }
 
   a {
     color: $sub-text-color;
