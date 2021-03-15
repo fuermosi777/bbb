@@ -123,31 +123,109 @@ body {
   }
 }
 
-// Title preview in the index/archive list.
-.title-list-item {
-  margin-bottom: 10px;
+// Post title row in a timeline
+.timeline-post-row {
   display: flex;
-  align-items: center;
+  flex-direction: column;
 
-  .meta {
-    margin-right: 8px;
-    font-size: 1.2rem;
+  .title-row {
+    display: flex;
+    .title-indicator {
+      width: 2rem;
+      height: 2rem;
+      margin-right: 2rem;
+      border-radius: 50%;
+      background-color: $timeline-icon;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        stroke: white;
+        width: 1.2rem;
+        height: 1.2rem;
+        stroke-width: 2px;
+      }
+    }
+    .title-link {
+      font-size: 1.5rem;
+      color: $text-color;
+      margin: 0;
+      text-decoration: none;
+      font-weight: 500;
+
+      &:visited {
+        color: $sub-text-color;
+      }
+    }
+  }
+  .meta-row {
+    display: flex;
+    margin: 1rem 0;
+    
+    .meta-indicator {
+      width: 2rem;
+      display: flex;
+      justify-content: center;
+      margin-right: 2rem;
+      
+      .line {
+        width: 2px;
+        min-height: 4rem;
+        background-color: $timeline-indicator;
+        border-radius: 1px;
+      }
+    }
+    .meta {
+      display: flex;
+      .date {
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin-right: 0.5rem;
+      }
+    }
   }
 
-  .title {
-    font-size: 1.5rem;
-    color: $text-color;
-    margin-bottom: 0;
+  .archive-row {
+    display: flex;
+    
+    .archive-indicator {
+      width: 2rem;
+      display: flex;
+      align-items: center;
+      margin-right: 2rem;
+      flex-direction: column;
+      
+      .line {
+        width: 2px;
+        height: 1.5rem;
+        background-color: lighten($timeline-indicator, 15%);
+        border-radius: 1px;
+        margin-bottom: 0.8rem;
+      }
+      .line-1 {
+        width: 2px;
+        height: 0.5rem;
+        background-color: lighten($timeline-indicator, 20%);
+        border-radius: 1px;
+      }
+    }
+    .archive {
+      .archive-link {
+        font-size: 1.4rem;
+        font-weight: 500;
+        text-decoration: none;
+        color: $tint-color;
+      }
+    }
   }
 }
 
 .title-item-year {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: $text-color;
-  margin-top: 40px;
   margin-bottom: 20px;
-  font-weight: 500;
-  text-align: center;
+  font-weight: 600;
 }
 
 .draft-badge {
@@ -239,26 +317,6 @@ hr {
   }
 }
 
-div.end {
-  margin: 60px 0;
-  display: flex;
-  justify-content: space-between;
-
-  @media #{$phone} {
-    flex-direction: column;
-  }
-
-  a {
-    color: $sub-text-color;
-    font-size: 1.5rem;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}
-
 button#show-disqus {
   padding: 8px;
   border: 1px solid $border-color;
@@ -275,22 +333,6 @@ button#show-disqus {
     cursor: pointer;
     color: $tint-color;
   }
-}
-
-a.bottom-button {
-  display: block;
-  text-decoration: none;
-  margin-top: 40px;
-  color: $text-color;
-  font-size: 1.4rem;
-
-  &:hover {
-    color: $tint-color;
-  }
-}
-
-a.title-list-item-link {
-  text-decoration: none;
 }
 
 #disqus_thread {

@@ -3,7 +3,7 @@ layout: default
 ---
 
 {% for post in site.categories[page.category] %}
-{% include post_list_title.html post=post %}
+{% include timeline_post_row.html post=post%}
 {% endfor %}
 
 <hr>

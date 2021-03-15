@@ -6,38 +6,20 @@ layout: default
 
 <article>
   {% unless page.hidden %}
-    {{page.content}}
+  {{page.content}}
   {% endunless %}
 </article>
 
 <hr>
 
-<div class="end">
-{% if page.previous.url %}
-  <div class="prev">
-    <div class="tag">旧一篇</div>
-    {% include post_list_title.html post=page.previous %}
-  </div>
-{% endif %}
-
-{% if page.next.url %}
-  <div class="next">
-    <div class="tag">新一篇</div>
-    {% include post_list_title.html post=page.next %}
-  </div>
-{% endif %}
-</div>
-
-<a class="bottom-button" title="返回首页" href={{ "/" | relative_url }}>返回</a>
 <button onclick="showDisqus();return false;" id="show-disqus" class="bottom-button">留言</button>
 
 <div id="disqus_thread">
   <a></a>
 </div>
 <script>
-var disqus_config = function () {
-this.page.url = "{{ page.url | absolute_url }}";
-this.page.identifier = "{{ page.url }}";
-};
+  var disqus_config = function () {
+    this.page.url = "{{ page.url | absolute_url }}";
+    this.page.identifier = "{{ page.url }}";
+  };
 </script>
-                          

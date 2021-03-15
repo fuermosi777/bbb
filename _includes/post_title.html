@@ -1,13 +1,9 @@
 <div class="title">
-  {% if include.linkable %}<a href="{{include.post.url | relative_url}}"
-    >{{include.post.title}}</a
-  >{% else %}{{include.post.title}}{% endif %}{% if include.post.draft %}<span
-    class="draft-badge"
-    >草稿</span
-  >{% endif %}
+  {% if include.linkable %}<a href="{{include.post.url | relative_url}}">{{include.post.title}}</a>{% else
+  %}{{include.post.title}}{% endif %}{% if include.post.draft %}<span class="draft-badge">草稿</span>{% endif %}
 </div>
 <div class="meta">
-  {{include.post.date | date: "%Y.%m.%d"}} | {% for cat in
+  {{include.post.date | date: "%Y-%m-%d"}} | {% for cat in
   include.post.categories %}{{ cat }} | {% endfor %} {{ include.post.content |
   strip_html | strip_newlines | size }}字
 </div>
