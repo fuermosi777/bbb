@@ -3,17 +3,7 @@ layout: default
 ---
 
 {% for post in site.posts limit:10 %}
-{% include timeline_post_row.html post=post%}
+{% include post_list_title.html post=post %}
 {% endfor %}
 
-<div class="timeline-post-row">
-    <div class="archive-row">
-        <div class="archive-indicator">
-            <div class="line"></div>
-            <div class="line-1"></div>
-        </div>
-        <div class="archive">
-            <a class="archive-link" title="归档" href="/archive">归档</a>
-        </div>
-    </div>
-</div>
+<a class="bottom-button" title="归档" href="/archive">归档</a>
