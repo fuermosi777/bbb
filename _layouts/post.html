@@ -4,7 +4,7 @@ layout: default
 
 {% include post_title.html post=page linkable=false %}
 
-<article>
+<article class="hidden" data-show="{{ page.showonly }}">
   {% unless page.hidden %}
   {{page.content}}
   {% endunless %}
