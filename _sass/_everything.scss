@@ -167,6 +167,11 @@ article {
     font-size: 1.65rem;
   }
 
+  a {
+    text-decoration: none;
+    color: $tint-color;
+  }
+
   p {
     margin-bottom: 1.8rem;
     line-height: 1.618;
