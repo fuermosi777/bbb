@@ -168,10 +168,10 @@ article {
   }
 
   a {
-    text-decoration: dotted;
+    text-decoration: none;
     color: $tint-color;
     &:hover {
-      text-decoration: darken($color: $tint-color, $amount: 15%);
+      color: darken($color: $tint-color, $amount: 15%);
     }
   }
 
