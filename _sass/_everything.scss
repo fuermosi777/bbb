@@ -267,24 +267,6 @@ div.end {
   }
 }
 
-button#show-disqus {
-  padding: 8px;
-  border: 1px solid $border-color;
-  background-color: $background-color;
-  color: $sub-text-color;
-  font-size: 1.3rem;
-  border-radius: 4px;
-  margin: 0 auto 20px;
-  display: block;
-  transition: all 0.2s;
-  outline: none;
-
-  &:hover {
-    cursor: pointer;
-    color: $tint-color;
-  }
-}
-
 a.bottom-button {
   display: block;
   text-decoration: none;
@@ -299,12 +281,6 @@ a.bottom-button {
 
 a.title-list-item-link {
   text-decoration: none;
-}
-
-#disqus_thread {
-  a {
-    color: $tint-color;
-  }
 }
 
 .hidden {
