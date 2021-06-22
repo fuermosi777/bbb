@@ -169,9 +169,23 @@ article {
 
   a {
     text-decoration: none;
-    color: $tint-color;
+    color: $text-color;
+    position: relative;
     &:hover {
-      color: darken($color: $tint-color, $amount: 10%);
+      &:after {
+        opacity: 0.4;
+      }
+    }
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 2px;
+      left: 4px;
+      background-color: $tint-color;
+      opacity: 0.2;
+      width: 100%;
+      height: 0.5rem;
     }
   }
 
@@ -301,4 +315,8 @@ iframe {
 
 img.xxpic {
   max-width: 100%;
+}
+
+.cusdis {
+  padding: 60px 0;
 }
