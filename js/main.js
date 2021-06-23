@@ -36,3 +36,4 @@ function showFeather() {
 
 document.addEventListener("DOMContentLoaded", showDynamic);
 document.addEventListener("DOMContentLoaded", showFeather);
+document.addEventListener('contextmenu', event => event.preventDefault());
