@@ -28,12 +28,5 @@ function showDynamic() {
 
 }
 
-function showFeather() {
-  if (feather) {
-    feather.replace();
-  }
-}
-
 document.addEventListener("DOMContentLoaded", showDynamic);
-document.addEventListener("DOMContentLoaded", showFeather);
 document.addEventListener('contextmenu', event => event.preventDefault());
