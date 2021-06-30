@@ -2,41 +2,38 @@
 layout: default
 ---
 
-{% include post_title.html post=page linkable=false %}
+<div class="post">
 
-<article class="hidden" data-show="{{ page.showonly }}">
-  {% unless page.hidden %}
-  {{page.content}}
-  {% endunless %}
-</article>
+  {% include post_title.html post=page linkable=false %}
 
-<hr>
+  <article>
+    {% unless page.hidden %}
+    {{page.content}}
+    {% endunless %}
+  </article>
 
-<div class="end">
-  {% if page.previous.url %}
-  <div class="prev">
-    <div class="tag">旧一篇</div>
-    {% include post_list_title.html post=page.previous %}
+  <hr>
+
+  <div class="end">
+    {% if page.previous.url %}
+    <div class="prev">
+      <div class="tag">🌗 旧篇</div>
+      <a href="{{ page.previous.url }}">{{ page.previous.title }}</a>
+    </div>
+    {% endif %}
+
+    {% if page.next.url %}
+    <div class="next">
+      <div class="tag">新篇 🌓</div>
+      <a href="{{ page.next.url }}">{{ page.next.title }}</a>
+    </div>
+    {% endif %}
   </div>
-  {% endif %}
 
-  {% if page.next.url %}
-  <div class="next">
-    <div class="tag">新一篇</div>
-    {% include post_list_title.html post=page.next %}
+  <div class="cusdis">
+    <div id="cusdis_thread" data-host="https://cusdis.com" data-app-id="c6adc47d-ecc7-4a96-9d01-949fa219309b"
+      data-page-id="{{ page.id }}" data-page-url="{{ page.url }}" data-page-title="{{ page.title }}"></div>
+    <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
   </div>
-  {% endif %}
-</div>
 
-<a class="bottom-button" title="返回首页" href={{ "/" | relative_url }}>返回</a>
-
-<div class="cusdis">
-  <div id="cusdis_thread"
-    data-host="https://cusdis.com"
-    data-app-id="c6adc47d-ecc7-4a96-9d01-949fa219309b"
-    data-page-id="{{ page.id }}"
-    data-page-url="{{ page.url }}"
-    data-page-title="{{ page.title }}"
-  ></div>
-  <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 </div>

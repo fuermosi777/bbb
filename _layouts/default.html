@@ -7,8 +7,11 @@ layout: base
         <a href={{ "/" | relative_url }} class="logo" title="Hao's Blog">{{ site.title }}</a>
     </div>
     <div class="trailing">
-        <a href="/category/life">Life</a>
-        <a href="/category/road">Road</a>
+        <a href="/" class="{% if page.url == '/' %}active{% endif %}">首页</a>
+        <span class="separator"></span>
+        <a href="/archive"class="{% if page.url == '/archive' %}active{% endif %}">归档</a>
+        <span class="separator"></span>
+        <a href="/category/road"class="{% if page.url == '/category/road' %}active{% endif %}">在路上</a>
     </div>
 </div>
 

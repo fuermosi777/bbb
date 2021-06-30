@@ -7,13 +7,12 @@
 $s: "only screen and (max-width : 779px)";
 $l: "only screen and (min-width : 780px)";
 $background-color: #ffffff;
-$text-color: #212121;
+$title-color: #212121;
+$text-color: #3a3a3c;
 $sub-text-color: #757575;
-$border-color: #efefef;
-$tint-color: rgba(0, 122, 255, 1);
-
-$timeline-icon: #707070;
-$timeline-indicator: #BDBDBD;
+$border-color: #cecece;
+$hover-bg-color: #ececec;
+$tint-color: rgb(0, 122, 255);
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import "everything";
