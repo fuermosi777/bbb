@@ -1,6 +1,9 @@
 <a class="title-list-item" href="{{ include.post.url | relative_url }}">
   <div class="title">{{include.post.title}}</div>
-  {% if include.post.hidden %}
+  <!-- If post has a "show" field, only show to those with these tag enabled -->
+  {% if include.post.show %}
+  <p class="preview hidden" data-show="{{ include.post.show }}">{{ include.post.content | strip_html | truncate: 100 }}</p>
+  {% elsif include.post.hidden %}
   {% else %}
   <p class="preview">{{ include.post.content | strip_html | truncate: 100 }}</p>
   {% endif %}
