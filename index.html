@@ -2,6 +2,10 @@
 layout: default
 ---
 
+<div class="hidden">
+  <img src="https://blogliuhao-1301379188.cos.ap-hongkong.myqcloud.com/photos/preview.png"/>
+</div>
+
 {% for post in site.posts limit:20 %}
 {% include post_list_title.html post=post %}
 {% endfor %}
