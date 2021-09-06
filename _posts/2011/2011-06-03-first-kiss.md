@@ -6,7 +6,7 @@ It's an amazing day.
 
 In short, we had a fight in the afternoon and I kissed her at night. Then we kissed for several times, and then we again kissed more. In her word, it is a theatrical day. I almost have forgotten why we had the fight-something about why she didn't want to come to my place. What I remember now only, is the feeling that her lips was on mine, hot and eager.
 
-After the fight via sms, I realized that I might was jeopardizing this invaluable relationship. Thus I went to her bedchamber, inviting her to dinner on my way there. Loath but approbatory, she promised that she would be come downstairs in a few minutes. After "a few minutes"-technically twenty minutes, I saw her and I know she was still extremely angry with me.
+After the fight via sms, I realized that I might was jeopardizing this invaluable relationship. Thus I went to her dorm, inviting her to dinner on my way there. Loath but approbatory, she promised that she would be come downstairs in a few minutes. After "a few minutes"-technically twenty minutes, I saw her and I know she was still extremely angry with me.
 
 After dinner, we decided to do something to spend the Eve of Duanwu. She proposed we drink beers. I knew that she scared me a little bit. After all I haven't met any girl who would like to drink beers to spend a night. It means that she is either a lunatic, or was in a very big mood.
 
