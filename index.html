@@ -3,7 +3,9 @@ layout: default
 ---
 
 {% for post in site.posts limit:20 %}
+{% unless post.draft %}
 {% include post_list_title.html post=post %}
+{% endunless %}
 {% endfor %}
 
 <a href="/archive" class="more">归档</a>

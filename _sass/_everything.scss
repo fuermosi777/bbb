@@ -307,6 +307,14 @@ article {
   iframe {
     width: 100% !important;
   }
+
+  pre {
+    max-height: 400px;
+    overflow: scroll;
+    background-color: $pre-bg-color;
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
 }
 
 hr {
