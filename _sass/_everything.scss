@@ -22,6 +22,10 @@ html {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  @media #{$phone} {
+    font-size: 75%;
+  }
 }
 
 body {
@@ -41,15 +45,11 @@ body {
 
 .menu-bar {
   max-width: 640px;
-  padding: 1rem;
+  padding: 1.5rem;
   margin: 1rem auto 5rem;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-
-  @media #{$phone} {
-    font-size: 1.68rem;
-  }
 
   a.logo {
     color: $title-color;
@@ -107,12 +107,32 @@ body {
       }
     }
   }
+
+  @media #{$phone} {
+    font-size: 1.68rem;
+    height: 12rem;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $background-color;
+    z-index: 9;
+
+    .leading {
+      margin-bottom: 3rem;
+    }
+  }
 }
 
 // Main content.
 .content {
   max-width: 640px;
   margin: 0 auto;
+
+  @media #{$phone} {
+    margin-top: 12rem;
+  }
 
   // Title in post page.
   .title {
@@ -144,7 +164,7 @@ body {
 .title-list-item-slim {
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.5rem;
   text-decoration: none;
 
   &:hover {
@@ -171,9 +191,13 @@ body {
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 0.6rem;
   transition: background-color 0.3s;
+
+  @media #{$phone} {
+    margin-bottom: 2rem;
+  }
 
   &:hover {
     background-color: $hover-bg-color;
@@ -206,7 +230,7 @@ body {
   color: $sub-text-color;
   margin-top: 40px;
   margin-bottom: 20px;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 .draft-badge {
@@ -219,16 +243,12 @@ body {
 }
 
 .post {
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 article {
   font-size: 1.6rem;
   color: $text-color;
-
-  @media #{$phone} {
-    font-size: 1.65rem;
-  }
 
   a {
     text-decoration: none;
@@ -265,9 +285,9 @@ article {
 
   blockquote {
     background-color: $border-color;
-    margin: 0;
-    padding: 2px 18px;
-    border-radius: 6px;
+    margin: 2rem 0;
+    padding: 1rem 2rem;
+    border-radius: 0.6rem;
   }
 
   ol,
@@ -282,6 +302,10 @@ article {
         color: $sub-text-color;
       }
     }
+  }
+
+  iframe {
+    width: 100% !important;
   }
 }
 
@@ -371,4 +395,14 @@ img.xxpic {
 
 .cusdis {
   padding: 60px 0;
+}
+
+a.more {
+  color: $sub-text-color;
+  text-decoration: none;
+  position: relative;
+  font-size: 1.5rem;
+  text-align: center;
+  display: block;
+  margin-bottom: 2rem;
 }
