@@ -309,11 +309,12 @@ article {
   }
 
   pre {
-    max-height: 400px;
+    max-height: 800px;
     overflow: scroll;
     background-color: $pre-bg-color;
     border-radius: 0.5rem;
     padding: 1rem;
+    font-size: 1.4rem;
   }
 }
 
