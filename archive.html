@@ -10,7 +10,7 @@ layout: default
 
 <script type="text/javascript">
     var data = {
-        {% for post in site.posts %}{% unless post.hidden %}"{{ post.date | date: '%Y-%m-%d' }}": 1,
+        {% for post in site.posts %}{% unless post.hidden %}"{{ post.date }}": 1,
         {% endunless %}{% endfor %}
         };
 	var cal = new CalHeatMap();
@@ -34,7 +34,6 @@ layout: default
         onClick(data) {
             var options = { year: 'numeric', month: '2-digit', day: '2-digit' };
             let key = new Date(data).toLocaleDateString("en-US", options);
-            console.log(key)
             var url = location.href;               // Save down the URL without hash.
             location.href = "#"+key;
             history.replaceState(null,null,url); // reset URL without #id
