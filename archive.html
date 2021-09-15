@@ -2,6 +2,38 @@
 layout: default
 ---
 
+<link rel="stylesheet" href="{{ "/lib/css/cal-heatmap.css" | relative_url }}">
+<script src={{"/lib/js/d3.min.js" | relative_url }}></script>
+<script src={{"/lib/js/cal-heatmap.min.js" | relative_url }}></script>
+
+<div id="heatmap"></div>
+
+<script type="text/javascript">
+    var data = {
+        {% for post in site.posts %}"{{ post.date | date: '%Y-%m-%d' }}": 1,
+        {% endfor %}
+        };
+	var cal = new CalHeatMap();
+	cal.init({
+        itemSelector: "#heatmap",
+        start: new Date(2009, 0),
+        range: 12,
+        domain: "year",
+        subDomain: "day",
+        data: data,
+        // Convert to {[timestamp]: number}
+        afterLoadData(data) {
+            var parsed = {};
+            for (var d in data) {
+                var key = new Date(d).getTime() / 1000;
+                parsed[key] = 1;
+            }
+            return parsed;
+        },
+        verticalOrientation: true,
+    });
+</script>
+
 {% for post in site.posts %}
 {% unless post.hidden %}
 {% capture current_year %}{{ post.date | date: "%Y" }}{% endcapture %}
@@ -12,3 +44,4 @@ layout: default
 {% include post_list_title_slim.html post=post %}
 {% endunless %}
 {% endfor %}
+
