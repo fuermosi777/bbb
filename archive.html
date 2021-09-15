@@ -10,14 +10,14 @@ layout: default
 
 <script type="text/javascript">
     var data = {
-        {% for post in site.posts %}"{{ post.date | date: '%Y-%m-%d' }}": 1,
-        {% endfor %}
+        {% for post in site.posts %}{% unless post.hidden %}"{{ post.date | date: '%Y-%m-%d' }}": 1,
+        {% endunless %}{% endfor %}
         };
 	var cal = new CalHeatMap();
 	cal.init({
         itemSelector: "#heatmap",
         start: new Date(2009, 0),
-        range: 12,
+        range: new Date().getFullYear() - 2009 + 1,
         domain: "year",
         subDomain: "day",
         data: data,
@@ -31,6 +31,14 @@ layout: default
             return parsed;
         },
         verticalOrientation: true,
+        onClick(data) {
+            var options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+            let key = new Date(data).toLocaleDateString("en-US", options);
+            console.log(key)
+            var url = location.href;               // Save down the URL without hash.
+            location.href = "#"+key;
+            history.replaceState(null,null,url); // reset URL without #id
+        }
     });
 </script>
 
