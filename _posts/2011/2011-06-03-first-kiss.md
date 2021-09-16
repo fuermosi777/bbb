@@ -1,5 +1,6 @@
 ---
 layout: post
+tags: Y
 ---
 
 It's an amazing day.
