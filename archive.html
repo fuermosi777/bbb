@@ -42,6 +42,7 @@ layout: default
             var options = { year: 'numeric', month: '2-digit', day: '2-digit' };
             let key = new Date(data).getTime() / 1000;
             var url = location.href;               // Save down the URL without hash.
+            console.log(key)
             location.href = "#"+key;
             history.replaceState(null,null,url); // reset URL without #id
         }
