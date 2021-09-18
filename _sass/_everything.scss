@@ -45,7 +45,7 @@ body {
 
 .menu-bar {
   max-width: 640px;
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem 0;
   margin: 1rem auto 5rem;
   display: flex;
   justify-content: space-between;
@@ -77,16 +77,22 @@ body {
   .trailing {
     display: flex;
     font-size: 1.6rem;
-    padding-bottom: 0.8rem;
-    border-bottom: 1px solid $border-color;
 
     .separator {
       width: 2rem;
+      border-bottom: 1px solid $border-color;
+    }
+
+    .rester {
+      flex: 1;
+      border-bottom: 1px solid $border-color;
     }
 
     a {
       color: $sub-text-color;
       text-decoration: none;
+      border-bottom: 1px solid $border-color;
+      padding-bottom: 0.5rem;
 
       &:hover {
         color: $tint-color;
@@ -95,15 +101,7 @@ body {
       &.active {
         font-weight: bold;
         position: relative;
-        &:after {
-          position: absolute;
-          content: "";
-          top: 3rem;
-          left: 0;
-          height: 1px;
-          width: 100%;
-          background-color: $title-color;
-        }
+        border-bottom: 1px solid $title-color;
       }
     }
   }
