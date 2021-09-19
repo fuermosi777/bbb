@@ -155,10 +155,6 @@ body {
 
   .meta {
     color: $sub-text-color;
-
-    a {
-      color: $tint-color;
-    }
   }
 }
 
@@ -446,5 +442,14 @@ a.more {
     &:active {
       opacity: 0.8;
     }
+  }
+}
+
+.tags {
+  padding: 2rem 0;
+  font-size: 1.4rem;
+  a {
+    color: $sub-text-color;
+    margin-right: 1rem;
   }
 }
