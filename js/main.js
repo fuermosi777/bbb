@@ -28,5 +28,40 @@ function showDynamic() {
 
 }
 
+var blacklist = [
+  '67.188.2.177' // The Milpitas guy
+]
+
+function getip() {
+  fetch('https://www.cloudflare.com/cdn-cgi/trace')
+  .then(function(response) {
+    if (response.status !== 200) {
+      console.log('Looks like there was a problem when getting IP. Status Code: ' +
+        response.status);
+      return;
+    }
+
+    response.text().then(function(data) {
+      data = data.trim().split('\n').reduce(function(obj, pair) {
+        pair = pair.split('=');
+        return obj[pair[0]] = pair[1], obj;
+      }, {});
+      
+      if (data.ip && blacklist.indexOf(data.ip) > -1) {
+        var article = document.querySelector('article');
+        if (article) {
+          article.parentNode.removeChild(article);
+        }
+      } else {
+        console.log('You are good: ', data.ip);
+      }
+    });
+  })
+  .catch(function(err) {
+    console.log('Fetch Error :-S', err);
+  });
+}
+
 document.addEventListener("DOMContentLoaded", showDynamic);
 document.addEventListener('contextmenu', event => event.preventDefault());
+document.addEventListener("DOMContentLoaded", getip);

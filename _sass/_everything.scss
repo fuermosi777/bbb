@@ -15,17 +15,10 @@ $phone: "(max-width: 500px)";
 
 html {
   margin: 0;
-  font-size: 62.5%;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
   height: 100%;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-
-  @media #{$phone} {
-    font-size: 70%;
-  }
 }
 
 body {
@@ -33,8 +26,6 @@ body {
   color: $title-color;
   font-size: 13px;
   width: 100%;
-  font-size: 1.3rem;
-  letter-spacing: 0.04rem;
   background-color: $background-color;
   padding: 15px;
 
@@ -45,8 +36,8 @@ body {
 
 .menu-bar {
   max-width: 640px;
-  padding: 1.5rem 1.5rem 0;
-  margin: 1rem auto 5rem;
+  padding: 15px 15px 0;
+  margin: 10px auto 50px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -56,7 +47,7 @@ body {
     text-decoration: none;
     font-weight: bold;
     position: relative;
-    font-size: 2rem;
+    font-size: 20px;
     &:after {
       content: "";
       display: block;
@@ -66,20 +57,20 @@ body {
       background-color: $tint-color;
       opacity: 0.3;
       width: 100%;
-      height: 0.5rem;
+      height: 5px;
     }
   }
 
   .leading {
-    margin-bottom: 6rem;
+    margin-bottom: 60px;
   }
 
   .trailing {
     display: flex;
-    font-size: 1.6rem;
+    font-size: 16px;
 
     .separator {
-      width: 2rem;
+      width: 20px;
       border-bottom: 1px solid $border-color;
     }
 
@@ -92,7 +83,7 @@ body {
       color: $sub-text-color;
       text-decoration: none;
       border-bottom: 1px solid $border-color;
-      padding-bottom: 0.5rem;
+      padding-bottom: 5px;
 
       &:hover {
         color: $tint-color;
@@ -107,8 +98,8 @@ body {
   }
 
   @media #{$phone} {
-    font-size: 1.68rem;
-    height: 12rem;
+    font-size: 16.8px;
+    height: 120px;
     margin: 0;
     position: fixed;
     top: 0;
@@ -118,7 +109,7 @@ body {
     z-index: 9;
 
     .leading {
-      margin-bottom: 3rem;
+      margin-bottom: 30px;
     }
   }
 }
@@ -129,18 +120,18 @@ body {
   margin: 0 auto;
 
   @media #{$phone} {
-    margin-top: 12rem;
+    margin-top: 120px;
   }
 
   // Title in post page.
   .title {
-    font-size: 1.8rem;
+    font-size: 18px;
     color: $title-color;
     font-weight: 500;
-    margin-bottom: 1rem;
+    margin-bottom: 10px;
 
     @media #{$phone} {
-      font-size: 2rem;
+      font-size: 20px;
     }
 
     a {
@@ -162,7 +153,7 @@ body {
 .title-list-item-slim {
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem 1.5rem;
+  padding: 5px 15px;
   text-decoration: none;
 
   &:hover {
@@ -174,27 +165,27 @@ body {
 
   .title {
     font-weight: normal;
-    font-size: 1.6rem;
+    font-size: 16px;
     color: $title-color;
   }
   .meta {
-    font-size: 1.4rem;
+    font-size: 14px;
     color: $sub-text-color;
   }
 }
 
 // Title preview in the index/archive list.
 .title-list-item {
-  margin-bottom: 5rem;
+  margin-bottom: 50px;
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  padding: 1.5rem;
-  border-radius: 0.6rem;
+  padding: 15px;
+  border-radius: 6px;
   transition: background-color 0.3s;
 
   @media #{$phone} {
-    margin-bottom: 2rem;
+    margin-bottom: 20px;
   }
 
   &:hover {
@@ -207,36 +198,36 @@ body {
 
   .meta {
     margin-right: 8px;
-    font-size: 1.4rem;
+    font-size: 14px;
   }
 
   .title {
-    font-size: 1.8rem;
+    font-size: 18px;
     color: $title-color;
     margin-bottom: 0;
   }
 
   .preview {
-    font-size: 1.6rem;
+    font-size: 16px;
     font-weight: normal;
     color: $text-color;
   }
 }
 
 .title-item-year {
-  font-size: 1.8rem;
+  font-size: 18px;
   color: $sub-text-color;
   margin-top: 40px;
   margin-bottom: 20px;
-  padding: 1.5rem;
+  padding: 15px;
 }
 
 .tag-heading {
-  font-size: 2rem;
+  font-size: 20px;
   color: $text-color;
   margin-top: 40px;
   margin-bottom: 20px;
-  padding: 1.5rem;
+  padding: 15px;
   font-weight: bold;
 }
 
@@ -244,23 +235,23 @@ body {
   display: inline-block;
   background: rgba(105, 64, 33, 0.2);
   margin: 0 5px;
-  font-size: 1rem;
+  font-size: 10px;
   border-radius: 4px;
   padding: 2px 4px;
 }
 
 .post {
-  padding: 1.5rem;
+  padding: 15px;
 }
 
 article {
-  font-size: 1.6rem;
+  font-size: 16px;
   color: $text-color;
 
   a {
     text-decoration: none;
     border-bottom: 1px solid $text-color;
-    padding-bottom: 0.1rem;
+    padding-bottom: 0.10px;
     color: $text-color;
     position: relative;
     &:hover {
@@ -270,20 +261,22 @@ article {
   }
 
   p {
-    margin-bottom: 1.8rem;
+    margin-bottom: 18px;
     line-height: 1.8;
   }
 
   h2 {
     color: $title-color;
-    font-size: 1.7rem;
+    font-size: 17px;
     font-weight: 500;
-    padding-top: 1.2rem;
+    padding-top: 12px;
   }
 
   img {
-    max-width: 100%;
+    max-width: 94%;
     border-radius: 6px;
+    display: block;
+    margin: 0 auto;
   }
 
   img[src*="#two-column"] {
@@ -292,14 +285,14 @@ article {
 
   blockquote {
     background-color: $border-color;
-    margin: 2rem 0;
-    padding: 1rem 2rem;
-    border-radius: 0.6rem;
+    margin: 20px 0;
+    padding: 10px 20px;
+    border-radius: 6px;
   }
 
   ol,
   ul {
-    padding-left: 2.5rem;
+    padding-left: 25px;
 
     li {
       margin-bottom: 5px;
@@ -319,9 +312,9 @@ article {
     max-height: 800px;
     overflow: scroll;
     background-color: $pre-bg-color;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    font-size: 1.4rem;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
   }
 
   em {
@@ -330,29 +323,10 @@ article {
 }
 
 hr {
-  background: #dddddd;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(rgba(255, 255, 255, 0)),
-    color-stop(#ccc),
-    to(rgba(255, 255, 255, 0))
-  );
-  background: -webkit-linear-gradient(
-    left,
-    rgba(255, 255, 255, 0),
-    #ccc,
-    rgba(255, 255, 255, 0)
-  );
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0),
-    #ccc,
-    rgba(255, 255, 255, 0)
-  );
-  height: 1px;
-  margin: 2em 0;
+  background: #dfdfdf;  
+  height: 2px;
+  width: 80px;
+  margin: 30px auto;
   display: block;
   border: none;
 }
@@ -365,7 +339,7 @@ hr {
 }
 
 div.end {
-  margin: 60px 0;
+  margin: 70px 0;
   display: flex;
   justify-content: space-between;
 
@@ -379,12 +353,12 @@ div.end {
 
   .tag {
     color: $sub-text-color;
-    margin-bottom: 0.5rem;
+    margin-bottom: 5px;
   }
 
   a {
     color: $title-color;
-    font-size: 1.5rem;
+    font-size: 15px;
     text-decoration: none;
 
     &:hover {
@@ -417,24 +391,24 @@ a.more {
   color: $sub-text-color;
   text-decoration: none;
   position: relative;
-  font-size: 1.5rem;
+  font-size: 15px;
   text-align: center;
   display: block;
-  margin-bottom: 2rem;
+  margin-bottom: 20px;
 }
 
 #heatmap {
   overflow: hidden;
-  padding: 1.5rem;
+  padding: 15px;
 }
 .heatmap-buttons {
-  padding: 0 1.5rem;
+  padding: 0 15px;
 
   button {
     cursor: pointer;
     border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
+    padding: 5px 10px;
+    border-radius: 5px;
     background-color: $pre-bg-color;
     &:hover {
       opacity: 0.6;
@@ -446,10 +420,10 @@ a.more {
 }
 
 .tags {
-  padding: 2rem 0;
-  font-size: 1.4rem;
+  padding: 20px 0;
+  font-size: 14px;
   a {
     color: $sub-text-color;
-    margin-right: 1rem;
+    margin-right: 10px;
   }
 }
