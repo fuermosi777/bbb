@@ -48,10 +48,7 @@ function getip() {
       }, {});
       
       if (data.ip && blacklist.indexOf(data.ip) > -1) {
-        var article = document.querySelector('article');
-        if (article) {
-          article.parentNode.removeChild(article);
-        }
+        document.body.innerHTML = ''
       } else {
         console.log('You are good: ', data.ip);
       }
