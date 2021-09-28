@@ -60,5 +60,4 @@ function getip() {
 }
 
 document.addEventListener("DOMContentLoaded", showDynamic);
-document.addEventListener('contextmenu', event => event.preventDefault());
 document.addEventListener("DOMContentLoaded", getip);
