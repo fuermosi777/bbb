@@ -29,7 +29,7 @@ body {
 }
 
 .menu-bar {
-  max-width: 640px;
+  max-width: 760px;
   padding: 15px 15px 0;
   margin: 10px auto 50px;
   display: flex;
@@ -110,7 +110,7 @@ body {
 
 // Main content.
 .content {
-  max-width: 640px;
+  max-width: 760px;
   margin: 0 auto;
 
   @media #{$phone} {
@@ -267,7 +267,7 @@ article {
   }
 
   img {
-    max-width: 94%;
+    max-width: 100%;
     border-radius: 6px;
     display: block;
     margin: 0 auto;
@@ -278,10 +278,13 @@ article {
   }
 
   blockquote {
-    background-color: $border-color;
+    background-color: $pre-bg-color;
     margin: 20px 0;
-    padding: 10px 20px;
+    padding: 5px 15px;
     border-radius: 6px;
+    p {
+      text-indent: 0;
+    }
   }
 
   ol,
@@ -366,7 +369,7 @@ div.end {
 }
 
 iframe {
-  width: 640px;
+  width: 760px;
   height: 460px;
 }
 
