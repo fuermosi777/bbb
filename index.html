@@ -2,7 +2,7 @@
 layout: default
 ---
 
-{% for post in site.posts limit:20 %}
+{% for post in site.posts limit:7 %}
 {% unless post.draft %}
 {% unless post.hidden %}
 {% include post_list_title.html post=post %}

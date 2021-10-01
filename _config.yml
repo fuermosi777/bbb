@@ -16,13 +16,5 @@ photourl: "https://blogliuhao-1301379188.cos.ap-hongkong.myqcloud.com"
 markdown: kramdown
 permalink: /:year-:month-:day/:title
 
-collections:
-  category:
-    output: true
-
-defaults:
-  - scope:
-      path: ""
-      type: category
-    values:
-      layout: "category"
+paginate: 50
+paginate_path: "/archive/:num/"

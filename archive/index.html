@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+{% for post in paginator.posts %}
+{% unless post.hidden %}
+{% capture current_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+{% if current_year != previous_year %}
+<div class="title-item-year">{{ current_year }}</div>
+{% assign previous_year = current_year %}
+{% endif %}
+{% include post_list_title_slim.html post=post %}
+{% endunless %}
+{% endfor %}
+
+<hr>
+
+<!-- Pagination links -->
+<div class="post">
+    <div class="end">
+        {% if paginator.previous_page %}
+        <div class="prev">
+            <div class="tag">🌗</div>
+            <a href="{{ paginator.previous_page_path }}" class="previous">
+                上一页
+            </a>
+        </div>
+        {% endif %}
+
+        {% if paginator.next_page %}
+        <div class="next">
+            <div class="tag">🌓</div>
+            <a href="{{ paginator.next_page_path }}" class="next">下一页</a>
+        </div>
+        {% endif %}
+    </div>
+</div>
