@@ -182,6 +182,15 @@ body {
     margin-bottom: 20px;
   }
 
+  &:visited {
+    .title {
+      color: $sub-text-color;
+    }
+    .preview {
+      color: $sub-text-color;
+    }
+  }
+
   &:hover {
     background-color: $hover-bg-color;
   }
@@ -189,6 +198,7 @@ body {
   &:active {
     background-color: darken($color: $hover-bg-color, $amount: 5%);
   }
+  
 
   .meta {
     margin-right: 8px;
