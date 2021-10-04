@@ -150,6 +150,12 @@ body {
   padding: 5px 15px;
   text-decoration: none;
 
+  &:visited {
+    .title {
+      color: $sub-text-color;
+    }
+  }
+
   &:hover {
     .title,
     .meta {
