@@ -7,5 +7,5 @@
   {% else %}
   <p class="preview">{{ include.post.content | strip_html | truncate: 100 }}</p>
   {% endif %}
-  <div class="meta">{{include.post.date | date: "%Y.%m.%d"}}</div>
+  <div class="meta">{{include.post.date | date: "%Y年%m月"}}</div>
 </a>
