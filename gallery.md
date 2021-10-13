@@ -1,5 +1,6 @@
 ---
 layout: page
+title: 画
 ---
 
 <div class="gallery">
