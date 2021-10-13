@@ -4,6 +4,10 @@ title: 画
 ---
 
 <div class="gallery">
+<a class="exhibition" href="/gallery/9">
+    <img src="{{ site.photourl }}/photos/paint-y-9.jpg?imageView2/5/w/350/q/100!"/>
+    <span class="name">第九幅</span>
+  </a>
   <a class="exhibition" href="/gallery/8">
     <img src="{{ site.photourl }}/photos/paint-y-8.jpg?imageView2/5/w/350/q/100!"/>
     <span class="name">第八幅</span>
