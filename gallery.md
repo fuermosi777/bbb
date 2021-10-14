@@ -29,7 +29,7 @@ title: 画
     <span class="name">第四幅</span>
   </a>
   <a class="exhibition" href="/gallery/3">
-    <img src="{{ site.photourl }}/photos/paint-y-3.jpg?imageView2/5/w/350/q/100!"/>
+    <img src="{{ site.photourl }}/photos/paint-y-3-4.jpg?imageView2/5/w/350/q/100!"/>
     <span class="name">第三幅</span>
   </a>
   <a class="exhibition" href="/gallery/2">
