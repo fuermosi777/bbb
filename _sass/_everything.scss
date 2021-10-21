@@ -2,6 +2,8 @@ $phone: "(max-width: 500px)";
 
 * {
   box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 
 html {
