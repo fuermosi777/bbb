@@ -3,6 +3,6 @@
   %}{{include.post.title}}{% endif %}{% if include.post.draft %}<span class="draft-badge">草稿</span>{% endif %}
 </div>
 <div class="meta">
-  {{include.post.date | date: "%Y.%m"}} | {{ include.post.content |
+  {{include.post.date | date: "%Y.%m.%d"}} | {{ include.post.content |
   strip_html | strip_newlines | size }}字
 </div>
