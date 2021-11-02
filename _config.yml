@@ -16,5 +16,5 @@ photourl: "https://blogliuhao-1301379188.cos.accelerate.myqcloud.com"
 markdown: kramdown
 permalink: /:year-:month-:day/:title
 
-paginate: 50
+paginate: 30
 paginate_path: "/archive/:num/"

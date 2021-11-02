@@ -358,38 +358,6 @@ img.xxpic {
   max-width: 100%;
 }
 
-a.more {
-  color: $text-color;
-  text-decoration: none;
-  position: relative;
-  font-size: 16px;
-  text-align: center;
-  display: block;
-  padding-bottom: 40px;
-}
-
-#heatmap {
-  overflow: hidden;
-  padding: 15px;
-}
-.heatmap-buttons {
-  padding: 0 15px;
-
-  button {
-    cursor: pointer;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    background-color: $pre-bg-color;
-    &:hover {
-      opacity: 0.6;
-    }
-    &:active {
-      opacity: 0.8;
-    }
-  }
-}
-
 .tags {
   padding: 20px 0;
   font-size: 14px;

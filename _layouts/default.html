@@ -3,10 +3,14 @@ layout: base
 ---
 
 <div class="menu-bar">
-    <div class="leading">
+    <!-- <div class="leading">
         <a href={{ "/" | relative_url }} class="logo">
             <img src="{{ "/assets/watercolor_logo.png" | relative_url }}"/>
         </a>
+    </div> -->
+    <div class="trailing">
+        <a href="/" class="{% if page.url == '/' %}active{% endif %}">home</a>
+        <a href="/archive"class="{% if page.url == '/archive/' %}active{% endif %}">archive</a>
     </div>
 </div>
 
