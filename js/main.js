@@ -28,36 +28,11 @@ function showDynamic() {
 
 }
 
-var blacklist = [
-  '67.188.2.177' // The Milpitas guy
-]
-
-function getip() {
-  fetch('https://www.cloudflare.com/cdn-cgi/trace')
-  .then(function(response) {
-    if (response.status !== 200) {
-      console.log('Looks like there was a problem when getting IP. Status Code: ' +
-        response.status);
-      return;
-    }
-
-    response.text().then(function(data) {
-      data = data.trim().split('\n').reduce(function(obj, pair) {
-        pair = pair.split('=');
-        return obj[pair[0]] = pair[1], obj;
-      }, {});
-      
-      if (data.ip && blacklist.indexOf(data.ip) > -1) {
-        document.body.innerHTML = ''
-      } else {
-        console.log('You are good: ', data.ip);
-      }
-    });
-  })
-  .catch(function(err) {
-    console.log('Fetch Error :-S', err);
-  });
+function handleDocClick(e) {
+  if (e.target.matches("article p img")) {
+    e.target.classList.toggle('fs')
+  }
 }
 
 document.addEventListener("DOMContentLoaded", showDynamic);
-document.addEventListener("DOMContentLoaded", getip);
+document.addEventListener("click", handleDocClick);

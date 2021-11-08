@@ -245,6 +245,18 @@ article {
     border-radius: 6px;
     display: block;
     margin: 0 auto;
+    &:hover {
+      cursor: pointer;
+    }
+    &.fs {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-height: 96vh;
+      max-width: 96vw;
+      box-shadow: 0px 3px 15px 5px rgba(0,0,0,0.7);
+    }
   }
 
   img[src*="#two-column"] {
@@ -363,39 +375,6 @@ img.xxpic {
   a {
     color: $sub-text-color;
     margin-right: 10px;
-  }
-}
-
-.gallery {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  .exhibition {
-    text-decoration: none;
-    width: 33%;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    margin-bottom: 20px;
-    
-    @media #{$phone} {
-      width: 100%;
-    }
-
-    img {
-      margin-bottom: 10px;
-    }
-    span {
-      text-align: center;
-      color: $sub-text-color;
-      font-size: 14px;
-    }
-  }
-}
-.gallery-page {
-  img {
-    max-width: 100%;
-    margin-bottom: 20px;
   }
 }
 
