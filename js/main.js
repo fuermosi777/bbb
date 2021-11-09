@@ -35,4 +35,4 @@ function handleDocClick(e) {
 }
 
 document.addEventListener("DOMContentLoaded", showDynamic);
-document.addEventListener("click", handleDocClick);
+// document.addEventListener("click", handleDocClick);
