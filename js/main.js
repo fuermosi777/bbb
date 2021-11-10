@@ -27,50 +27,77 @@ function showDynamic() {
   }
 }
 
-var blacklist = [
-  '67.188.2.177', // The Milpitas guy
-  '180.111.48.125', // Nanjing
-  '104.28.69.57', // Beijing iOS?
-  '203.205.141.114', // Shenzhen
+var ipBlacklist = [
+   // The Milpitas guy
+  '67.188.2.177',
+  
+   // Nanjing
+  // '180.111.48.125',
+  // '202.119.45.48',
+
+  // Beijing iOS?
+  '104.28.69.57',
+  '104.28.66.56',
+  
+   // Shenzhen
+  '203.205.141.114',
+
+  // DEBUG
 ]
 
+function matchIp(rule, target) {
+  var rules = rule.split('.');
+  var targets = target.split('.');
+  for (var i = 0; i < 4; i++) {
+    if (rules[i] === '*') continue;
+    if (rules[i] !== targets[i]) return false;
+  }
+  return true;
+}
+
 function blockIp() {
-  fetch('https://www.cloudflare.com/cdn-cgi/trace')
-  .then(function(response) {
-    if (response.status !== 200) {
-      let errorMessage = 'Looks like there was a problem when getting IP. Status Code: ' +
-      response.status;
-      console.log(errorMessage);
-      if (mixpanel) {
-        mixpanel.track("error-read-ip");
-      }
-      return;
-    }
-
-    response.text().then(function(data) {
-      if (mixpanel) {
-        mixpanel.track("ip-data", {data: data});
-      }
-      data = data.trim().split('\n').reduce(function(obj, pair) {
-        pair = pair.split('=');
-        return obj[pair[0]] = pair[1], obj;
-      }, {});
-
-      if (data.ip && blacklist.indexOf(data.ip) > -1) {
-        document.body.innerHTML = ''
+  fetch('https://ipgeolocation.abstractapi.com/v1/?api_key=be9fb33a118545e6a1f36a0327e3c890')
+    .then(function (response) {
+      if (response.status !== 200) {
+        let errorMessage = 'Looks like there was a problem when getting IP. Status Code: ' +
+          response.status;
+        console.log(errorMessage);
         if (mixpanel) {
-          mixpanel.track("ip-blocked", { ip: data.ip });
+          mixpanel.track("error-read-ip");
         }
-      } else {
-        if (mixpanel) {
-          mixpanel.track("ip-allowed", { ip: data.ip });
-        }
+        return;
       }
+
+      response.json().then(function (data) {
+        if (mixpanel) {
+          mixpanel.track("ip-got", data);
+        }
+
+        var foundMatch = false;
+
+        if (data.ip_address) {
+          for (var i = 0; i < ipBlacklist.length; i++) {
+            if (matchIp(ipBlacklist[i], data.ip_address)) {
+              document.body.innerHTML = `<div class="sk-circle"><div class="sk-circle1 sk-child"></div><div class="sk-circle2 sk-child"></div><div class="sk-circle3 sk-child"></div><div class="sk-circle4 sk-child"></div><div class="sk-circle5 sk-child"></div><div class="sk-circle6 sk-child"></div><div class="sk-circle7 sk-child"></div><div class="sk-circle8 sk-child"></div><div class="sk-circle9 sk-child"></div><div class="sk-circle10 sk-child"></div><div class="sk-circle11 sk-child"></div><div class="sk-circle12 sk-child"></div></div>`;
+
+              foundMatch = true;
+
+              if (mixpanel) {
+                data['match_rule'] = ipBlacklist[i];
+                mixpanel.track("ip-blocked", data);
+              }
+            }
+          }
+        }
+
+        if (!foundMatch && mixpanel) {
+          mixpanel.track("ip-allowed", data);
+        }
+      });
+    })
+    .catch(function (err) {
+      console.log('Fetch Error :-S', err);
     });
-  })
-  .catch(function(err) {
-    console.log('Fetch Error :-S', err);
-  });
 }
 
 function handleDocClick(e) {
@@ -80,5 +107,5 @@ function handleDocClick(e) {
 }
 
 document.addEventListener("DOMContentLoaded", showDynamic);
-document.addEventListener("DOMContentLoaded", blockIp); 
+document.addEventListener("DOMContentLoaded", blockIp);
 // document.addEventListener("click", handleDocClick);
