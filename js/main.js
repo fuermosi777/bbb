@@ -43,11 +43,15 @@ var ipBlacklist = [
   '203.205.141.114',
 
   // DEBUG
+  // '107.218.153.121'
 ]
 
 function matchIp(rule, target) {
   var rules = rule.split('.');
   var targets = target.split('.');
+  if (rules.length !== 4 || targets.length !== 4) {
+    return true;
+  }
   for (var i = 0; i < 4; i++) {
     if (rules[i] === '*') continue;
     if (rules[i] !== targets[i]) return false;
