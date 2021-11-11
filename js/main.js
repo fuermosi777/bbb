@@ -28,10 +28,10 @@ function showDynamic() {
 }
 
 var ipBlacklist = [
-   // The Milpitas guy
+  // The Milpitas guy
   '67.188.2.177',
-  
-   // Nanjing
+
+  // Nanjing
   // '180.111.48.125',
   // '202.119.45.48',
 
@@ -41,8 +41,8 @@ var ipBlacklist = [
   '183.242.55.74',
   '103.144.148.217',
   '172.225.58.*',
-  
-   // Shenzhen
+
+  // Shenzhen
   '203.205.141.*',
 
   // DEBUG
@@ -68,9 +68,9 @@ function blockIp() {
       if (response.status !== 200) {
         let errorMessage = 'Looks like there was a problem when getting IP. Status Code: ' +
           response.status;
-        console.log(errorMessage);
+        showBlockingSpinner();
         if (mixpanel) {
-          mixpanel.track("error-read-ip");
+          mixpanel.track("error-read-ip", {error: errorMessage});
         }
         return;
       }
@@ -85,8 +85,7 @@ function blockIp() {
         if (data.ip_address) {
           for (var i = 0; i < ipBlacklist.length; i++) {
             if (matchIp(ipBlacklist[i], data.ip_address)) {
-              document.body.innerHTML = `<div class="sk-circle"><div class="sk-circle1 sk-child"></div><div class="sk-circle2 sk-child"></div><div class="sk-circle3 sk-child"></div><div class="sk-circle4 sk-child"></div><div class="sk-circle5 sk-child"></div><div class="sk-circle6 sk-child"></div><div class="sk-circle7 sk-child"></div><div class="sk-circle8 sk-child"></div><div class="sk-circle9 sk-child"></div><div class="sk-circle10 sk-child"></div><div class="sk-circle11 sk-child"></div><div class="sk-circle12 sk-child"></div></div>`;
-
+              showBlockingSpinner();
               foundMatch = true;
 
               if (mixpanel) {
@@ -105,6 +104,10 @@ function blockIp() {
     .catch(function (err) {
       console.log('Fetch Error :-S', err);
     });
+}
+
+function showBlockingSpinner() {
+  document.body.innerHTML = `<div class="sk-circle"><div class="sk-circle1 sk-child"></div><div class="sk-circle2 sk-child"></div><div class="sk-circle3 sk-child"></div><div class="sk-circle4 sk-child"></div><div class="sk-circle5 sk-child"></div><div class="sk-circle6 sk-child"></div><div class="sk-circle7 sk-child"></div><div class="sk-circle8 sk-child"></div><div class="sk-circle9 sk-child"></div><div class="sk-circle10 sk-child"></div><div class="sk-circle11 sk-child"></div><div class="sk-circle12 sk-child"></div></div>`;
 }
 
 function handleDocClick(e) {
