@@ -46,9 +46,6 @@ var ipBlacklist = [
 
   // Shenzhen
   '203.205.141.*',
-
-  // DEBUG
-  // '107.218.153.121'
 ]
 
 function matchIp(rule, target) {
