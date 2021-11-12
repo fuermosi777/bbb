@@ -30,7 +30,6 @@ function showDynamic() {
 var ipBlacklist = [
   // The Milpitas guy
   '67.188.2.177',
-  '107.218.153.121',
 
   // Nanjing
   // '180.111.48.125',
