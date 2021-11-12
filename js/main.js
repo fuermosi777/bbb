@@ -38,6 +38,7 @@ var ipBlacklist = [
   // Beijing / Guangzhou / iOS
   '104.28.69.57',
   '104.28.66.56',
+  '104.28.83.29',
   '183.242.55.74',
   '103.144.148.217',
   '172.225.58.*',
@@ -45,6 +46,11 @@ var ipBlacklist = [
 
   // Shenzhen
   '203.205.141.*',
+]
+
+var ipAllowedPathList = [
+  '/',
+  '/archive/'
 ]
 
 function matchIp(rule, target) {
@@ -61,6 +67,10 @@ function matchIp(rule, target) {
 }
 
 function blockIp() {
+  // Don't check at homepage.
+  if (ipAllowedPathList.indexOf(window.location.pathname) > -1) {
+    return;
+  }
   fetch('https://ipgeolocation.abstractapi.com/v1/?api_key=be9fb33a118545e6a1f36a0327e3c890')
     .then(function (response) {
       if (response.status !== 200) {
@@ -105,7 +115,7 @@ function blockIp() {
 }
 
 function showBlockingSpinner() {
-  document.body.innerHTML = `<div class="sk-circle"><div class="sk-circle1 sk-child"></div><div class="sk-circle2 sk-child"></div><div class="sk-circle3 sk-child"></div><div class="sk-circle4 sk-child"></div><div class="sk-circle5 sk-child"></div><div class="sk-circle6 sk-child"></div><div class="sk-circle7 sk-child"></div><div class="sk-circle8 sk-child"></div><div class="sk-circle9 sk-child"></div><div class="sk-circle10 sk-child"></div><div class="sk-circle11 sk-child"></div><div class="sk-circle12 sk-child"></div></div>`;
+  document.querySelector('article').innerHTML = `<div class="sk-circle"><div class="sk-circle1 sk-child"></div><div class="sk-circle2 sk-child"></div><div class="sk-circle3 sk-child"></div><div class="sk-circle4 sk-child"></div><div class="sk-circle5 sk-child"></div><div class="sk-circle6 sk-child"></div><div class="sk-circle7 sk-child"></div><div class="sk-circle8 sk-child"></div><div class="sk-circle9 sk-child"></div><div class="sk-circle10 sk-child"></div><div class="sk-circle11 sk-child"></div><div class="sk-circle12 sk-child"></div></div>`;
 }
 
 function handleDocClick(e) {
