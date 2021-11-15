@@ -50,6 +50,7 @@ var ipBlacklist = [
 
   // Shenzhen
   '203.205.141.*',
+  '27.46.9.133',
 ]
 
 var ipAllowedPathList = [
