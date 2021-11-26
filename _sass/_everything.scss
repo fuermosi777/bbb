@@ -108,12 +108,6 @@ body {
   padding: 5px 15px;
   text-decoration: none;
 
-  &:visited {
-    .title {
-      color: $sub-text-color;
-    }
-  }
-
   &:hover {
     .title,
     .meta {
@@ -144,15 +138,6 @@ body {
 
   @media #{$phone} {
     margin-bottom: 20px;
-  }
-
-  &:visited {
-    .title {
-      color: $sub-text-color;
-    }
-    .preview {
-      color: $sub-text-color;
-    }
   }
 
   &:hover {
