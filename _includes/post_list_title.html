@@ -5,8 +5,8 @@
   <p class="preview hidden" data-show="{{ include.post.show }}">{{ include.post.content | strip_html | truncate: 60 }}</p>
   {% elsif include.post.hidden %}
   {% else %}
-  <p class="preview">{{ include.post.content | strip_html | truncate: 60 }}</p>
+  <p class="preview">{{ include.post.content | strip_html | truncate: 100 }}</p>
   {% endif %}
   <!-- Date -->
-  <!-- <div class="meta">{{include.post.date | date: "%Y.%m.%d"}} {{include.post.weather}}</div> -->
+  <div class="meta">{{include.post.date | date: "%Y.%m.%d"}} {{include.post.weather}}</div>
 </a>
