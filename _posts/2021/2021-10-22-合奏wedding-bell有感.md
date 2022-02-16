@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 合奏Wedding Bell有感
+hidden: true
 ---
 
 几周前跑步时随机播放了Wedding Bell，慢慢的温柔的节奏给脚步力量。回去之后问波辉要不要继续再来一首。答曰走起。找原版的谱子打印，在邮箱里搜索，pdf附件的文件名响应了关键字的请求，返回了唯一的结果：一封Email，收件人是她的名字。
