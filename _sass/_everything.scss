@@ -106,20 +106,23 @@ body {
 .title-list-item-slim {
   display: flex;
   justify-content: space-between;
-  padding: 5px 15px;
+  padding: 10px 15px;
   text-decoration: none;
+  border-radius: 6px;
 
   &:hover {
     .title,
     .meta {
       color: $tint-color;
     }
+    background-color: $hover-bg-color;
   }
 
   .title {
     font-weight: normal;
     font-size: 16px;
     color: $title-color;
+    margin: 0;
   }
   .meta {
     font-size: 14px;
