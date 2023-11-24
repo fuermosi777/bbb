@@ -3,13 +3,13 @@ layout: base
 ---
 
 <div class="menu-bar">
-    <!-- <div class="leading">
+    <div class="leading">
         <a href={{ "/" | relative_url }} class="logo">
             <img src="{{ "/assets/watercolor_logo.png" | relative_url }}"/>
         </a>
-    </div> -->
+    </div>
     <div class="trailing">
-        <a href="/" class="{% if page.url == '/' %}active{% endif %}">{{ site.title }}</a>
+        <a href="/" class="{% if page.url == '/' %}active{% endif %}">首页</a>
         <a href="/archive"class="{% if page.url == '/archive/' %}active{% endif %}">归档</a>
         <a href="https://memos.fuermosi777.synology.me/u/fuermosi777">memos</a>
     </div>
