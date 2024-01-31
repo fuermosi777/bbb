@@ -1,0 +1,11 @@
+{{ define "home" }}
+{{ range where .Site.RegularPages "Type" "posts" | first 10 }}
+<a class="title-list-item" href="{{ .RelPermalink }}">
+  <div class="title">{{ .Title }}</div>
+  {{ if not .Params.hidden }}
+    <p class="preview">{{ .Summary }}...</p>
+  {{ end }}
+  <div class="meta">{{ time.Format "2006.01.02" .Date }}</div>
+</a>
+{{ end }}
+{{ end }}

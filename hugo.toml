@@ -1,0 +1,11 @@
+baseURL = 'https://blog.liuhao.im/'
+languageCode = 'zh-cn'
+title = 'Hao'
+summaryLength = 120
+hasCJKLanguage = true
+date_format = "2006.02.01"
+enableRobotsTXT = true
+canonifyURLs = true
+
+[frontmatter]
+date = [":filename", ":default"]

@@ -1,9 +1,0 @@
----
-layout: default
----
-
-{% for post in site.posts limit:7 %}
-{% unless post.hidden %}
-{% include post_list_title.html post=post %}
-{% endunless %}
-{% endfor %}

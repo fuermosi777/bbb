@@ -1,0 +1,18 @@
+{{ define "archive" }}
+{{/*  {{ $paginator := .Paginate ((where .Data.Pages "Type" "posts").GroupByDate "2006") }}  */}}
+<div class="title-item-year-menu">
+    {{ range (where .Site.RegularPages "Type" "posts").GroupByDate "2006" }}
+    <a href="#{{ .Key }}">{{ .Key }}</a>
+    {{ end }}
+</div>
+
+{{ range (where .Site.RegularPages "Type" "posts").GroupByDate "2006" }}
+<div class="title-item-year" id="{{ .Key }}">{{ .Key }}</div>
+{{ range .Pages }}
+<a class="title-list-item-slim" href="{{ .RelPermalink }}">
+    <div class="title">{{ .Title}}</div>
+    <div class="meta">{{ time.Format "01.02" .Date }}</div>
+</a>
+{{ end }}
+{{ end }}
+{{ end }}
