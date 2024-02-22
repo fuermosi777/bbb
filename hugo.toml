@@ -9,3 +9,7 @@ canonifyURLs = true
 
 [frontmatter]
 date = [":filename", ":default"]
+
+# Enable raw html in markdown.
+[markup.goldmark.renderer]
+unsafe = true
